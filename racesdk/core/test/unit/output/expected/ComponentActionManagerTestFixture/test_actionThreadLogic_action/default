@@ -1,0 +1,7 @@
+ComponentActionManagerTestFixture_test_actionThreadLogic_action_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 2000.0000000000000000, nextActionTime: 1000.0000000000000000, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: [ActionInfo{action: Action{ id:0}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}, ActionInfo{action: Action{ id:0}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}, ]}
+ComponentActionManagerTestFixture_test_actionThreadLogic_action_Test::getPackageHandlesForAction:  with *info=ActionInfo{action: Action{ id:0}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}
+MockComponentManagerInternal::getTransport: 
+MockTransportComponentWrapper::doAction:  with handlesJson=[5,8,13], action=Action{ id:0}
+MockComponentManagerInternal::actionDone:  with *info=ActionInfo{action: Action{ id:0}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}
+ComponentActionManagerTestFixture_test_actionThreadLogic_action_Test::TestBody:  with actionManager.testActionThreadLogic(1000)=0
+ComponentActionManagerTestFixture_test_actionThreadLogic_action_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 2000.0000000000000000, nextActionTime: 1300.0000000000000000, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: [ActionInfo{action: Action{ id:0}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}, ]}

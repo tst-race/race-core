@@ -1,0 +1,11 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+get after for non-existent category
+posting
+get after for existent category
+posting 2
+get after for existent category (2)
+posting 3
+after for timestamps returned by post
+stop containers

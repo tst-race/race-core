@@ -1,0 +1,34 @@
+version: '3.7'
+
+networks:
+  rib-overlay-network:
+    external: true
+
+services:
+  twosix-redis:
+    container_name: twosix-redis
+    image: redis:6.0.6
+    labels:
+      race.rib.deployment-name: ${DEPLOYMENT_NAME}
+    networks:
+    - rib-overlay-network
+
+  twosix-whiteboard:
+    command: -w 8
+    container_name: twosix-whiteboard
+    depends_on:
+    - twosix-redis
+    hostname: twosix-whiteboard
+    image: ghcr.io/tst-race/race-core/twosix-whiteboard:main
+    labels:
+      race.rib.deployment-name: ${DEPLOYMENT_NAME}
+    networks:
+    - rib-overlay-network
+    environment:
+      REDIS_HOSTNAME: twosix-redis
+
+x-logging:
+  driver: json-file
+  options:
+    max-file: '5'
+    max-size: 1m

@@ -1,0 +1,14 @@
+{
+    "name": "twosix-file-server",
+    "version": "1.0.0",
+    "description": "Static HTTP file server",
+    "author": "Two Six Technologies",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-fileupload": "^1.2.1"
+    }
+}

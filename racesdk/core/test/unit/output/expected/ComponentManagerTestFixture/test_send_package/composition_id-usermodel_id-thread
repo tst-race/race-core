@@ -1,0 +1,4 @@
+MockUserModel::getUserModelProperties: 
+MockUserModel::getTimeline:  with start=<Timestamp>, range=600.0000000000000000
+ComponentManagerTestFixture_test_send_package_Test::addLink:  with linkId=default link id, params=LinkParameters{}
+ComponentManagerTestFixture_test_send_package_Test::getTimeline:  with start=<Timestamp>, range=600.0000000000000000

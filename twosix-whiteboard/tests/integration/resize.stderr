@@ -1,0 +1,49 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+get latest index for non-existent category
+get index for non-existent category
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+get range for non-existent category
+post to previously non-existent category
+get latest index for existent category
+get latest index for non-existent category when another category exists
+get index for existent category
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+get index for non-existent category when another category exists
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+get non-existent range for existent category
+get existent range for existent category
+get range for non-existent category when another category exists
+post to existent category
+get latest index for existent category (2)
+get index for existent category (2)
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+get non-existent range for existent category
+get existent range for existent category
+post to second category
+get latest index for first category
+get index for first category
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+get latest index for second category
+get index for second category
+curl: (22) The requested URL returned error: 404 NOT FOUND
+curl: (22) The requested URL returned error: 404 NOT FOUND
+get non-existent ranges for second category
+get existent ranges for second category
+stop containers

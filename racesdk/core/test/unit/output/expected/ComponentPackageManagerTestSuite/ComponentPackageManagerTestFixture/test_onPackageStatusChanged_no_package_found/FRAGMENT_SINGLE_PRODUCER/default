@@ -1,0 +1,11 @@
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_no_package_found_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_no_package_found_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: []
+    packageQueue: []
+}

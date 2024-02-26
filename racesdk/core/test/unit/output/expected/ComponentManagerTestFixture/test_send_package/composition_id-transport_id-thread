@@ -1,0 +1,4 @@
+MockTransport::getTransportProperties: 
+ComponentManagerTestFixture_test_send_package_Test::createLink:  with handle=43, linkId=default link id
+MockTransport::getLinkProperties:  with linkId=default link id
+ComponentManagerTestFixture_test_send_package_Test::getActionParams:  with action=Action{ id:1}

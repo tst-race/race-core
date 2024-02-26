@@ -1,0 +1,38 @@
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_pending_packages_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_pending_packages_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:4}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 0, packageFragments: [] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 8, pendingEncodeHandle: 0, packageFragments: [] }, 
+    ]
+}
+MockComponentManagerInternal::getLinks: 
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_pending_packages_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, 
+        1:PackageFragmentInfo{package: 8, action: 4, state: UNENCODED, offset: 0, len: 20}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_pending_packages_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, ], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:4}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 8, action: 4, state: UNENCODED, offset: 0, len: 20}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 0, packageFragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 8, pendingEncodeHandle: 0, packageFragments: [PackageFragmentInfo{package: 8, action: 4, state: UNENCODED, offset: 0, len: 20}, ] }, 
+    ]
+}

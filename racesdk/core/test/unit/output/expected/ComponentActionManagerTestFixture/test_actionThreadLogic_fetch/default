@@ -1,0 +1,9 @@
+ComponentActionManagerTestFixture_test_actionThreadLogic_fetch_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}
+MockComponentManagerInternal::getUserModel: 
+MockUserModelComponentWrapper::getTimeline:  with start=0.1000000000000000, end=600.1000000000000227
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+ComponentActionManagerTestFixture_test_actionThreadLogic_fetch_Test::TestBody:  with actionManager.testActionThreadLogic(1)=0
+ComponentActionManagerTestFixture_test_actionThreadLogic_fetch_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 300.1000000000000227, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}

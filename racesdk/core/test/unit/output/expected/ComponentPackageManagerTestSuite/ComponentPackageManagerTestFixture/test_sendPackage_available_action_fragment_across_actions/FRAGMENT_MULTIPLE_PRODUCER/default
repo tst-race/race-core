@@ -1,0 +1,39 @@
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_fragment_across_actions_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_fragment_across_actions_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:4}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:5}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}
+MockComponentManagerInternal::getConnection:  with connId=mockConnectionId
+MockComponentManagerInternal::getLink:  with linkId=mockLinkId
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_fragment_across_actions_Test::TestBody:  with resp=PLUGIN_OK
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_fragment_across_actions_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 75}, 
+        1:PackageFragmentInfo{package: 7, action: 4, state: UNENCODED, offset: 75, len: 75}, 
+        2:PackageFragmentInfo{package: 7, action: 5, state: UNENCODED, offset: 150, len: 70}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_fragment_across_actions_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 75}, ], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:4}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 4, state: UNENCODED, offset: 75, len: 75}, ], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:5}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 5, state: UNENCODED, offset: 150, len: 70}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 0, packageFragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 75}, PackageFragmentInfo{package: 7, action: 4, state: UNENCODED, offset: 75, len: 75}, PackageFragmentInfo{package: 7, action: 5, state: UNENCODED, offset: 150, len: 70}, ] }, 
+    ]
+}

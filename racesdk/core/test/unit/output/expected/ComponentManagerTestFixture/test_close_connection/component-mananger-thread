@@ -1,0 +1,18 @@
+MockComponentPlugin::transportPlugin.createTransport:  with name=transport_id, roleName=some role name, pluginConfig={, , , , }
+
+MockComponentPlugin::usermodelPlugin.createUserModel:  with name=usermodel_id, roleName=some role name, pluginConfig={, , , , }
+
+MockComponentPlugin::encodingPlugin.createEncoding:  with name=encoder, roleName=some role name, pluginConfig={, , , , }
+
+MockRaceSdkComms::getChannelProperties:  with channelGid=composition_id
+MockRaceSdkComms::onChannelStatusChanged:  with handle=42, channelGid=composition_id, status=CHANNEL_AVAILABLE, properties=<ChannelProperties>
+, timeout=-2147483648
+MockRaceSdkComms::generateLinkId:  with channelGid=composition_id
+MockRaceSdkComms::getEntropy:  with numBytes=16
+MockRaceSdkComms::onLinkStatusChanged:  with handle=43, linkId=default link id, status=LINK_CREATED, properties=linkType: 0, transmissionType: 0, reliable: 0
+, timeout=-2147483648
+MockRaceSdkComms::generateConnectionId:  with linkId=default link id
+MockRaceSdkComms::onConnectionStatusChanged:  with handle=45, connId=default connection id, status=CONNECTION_CLOSED, properties=linkType: 0, transmissionType: 0, reliable: 0
+, timeout=-2147483648
+MockRaceSdkComms::onChannelStatusChanged:  with handle=0, channelGid=composition_id, status=CHANNEL_ENABLED, properties=<ChannelProperties>
+, timeout=-2147483648

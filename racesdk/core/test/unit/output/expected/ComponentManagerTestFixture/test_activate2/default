@@ -1,0 +1,30 @@
+ComponentManagerTestFixture_test_activate2_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: UNACTIVATED
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {}
+	 transport: nullopt
+	 usermodel: nullopt
+	 wrappers: []
+	 componentStates: {}
+	 activateHandle: 0
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}
+ComponentManagerTestFixture_test_activate2_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: ACTIVATED
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {encoder: <EncodingComponentWrapper>, }
+	 transport: <TransportComponentWrapper>
+	 usermodel: <UserModelComponentWrapper>
+	 wrappers: [<Sdk Wrapper for transport_id>, <Sdk Wrapper for usermodel_id>, <Sdk Wrapper for encoder>, ]
+	 componentStates: {encoder: COMPONENT_STATE_STARTED, transport_id: COMPONENT_STATE_STARTED, usermodel_id: COMPONENT_STATE_STARTED, }
+	 activateHandle: 42
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}

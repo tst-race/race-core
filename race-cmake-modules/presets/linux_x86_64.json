@@ -1,0 +1,42 @@
+{
+    "version": 4,
+    "include": ["common.json"],
+    "configurePresets": [
+        {
+            "name": "LINUX_x86_64",
+            "displayName": "Linux x86_64 Config",
+            "description": "Linux x86_64 build using clang",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/LINUX_x86_64",
+            "toolchainFile": "${fileDir}/../toolchains/linux-x86_64.toolchain.cmake",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-linux-x86_64",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_STAGING_PREFIX": "${sourceDir}/racesdk/package/LINUX_x86_64",
+                "TARGET_ARCHITECTURE": "LINUX_x86_64"
+            }
+        },
+        {
+            "name": "coverage",
+            "displayName": "Linux x86_64 Coverage Config",
+            "description": "Build with coverage profiling enabled",
+            "inherits": "LINUX_x86_64",
+            "binaryDir": "${sourceDir}/build/LINUX_x86_64-coverage",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-linux-x86_64-coverage",
+                "ENABLE_CODE_COVERAGE": "ON",
+                "ENABLE_CODE_LINTING": "OFF"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "LINUX_x86_64",
+            "configurePreset": "LINUX_x86_64"
+        },
+        {
+            "name": "coverage",
+            "configurePreset": "coverage"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_removed_actions_refragments_after_removed_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 117}, 
+        1:PackageFragmentInfo{package: 8, action: 42, state: UNENCODED, offset: 0, len: 58}, 
+        2:PackageFragmentInfo{package: 8, action: 43, state: UNENCODED, offset: 58, len: 59}, 
+        3:PackageFragmentInfo{package: 9, action: 43, state: UNENCODED, offset: 0, len: 117}, 
+        4:PackageFragmentInfo{package: 10, action: 43, state: UNENCODED, offset: 0, len: 58}, 
+        5:PackageFragmentInfo{package: 10, action: 44, state: UNENCODED, offset: 58, len: 59}, 
+        6:PackageFragmentInfo{package: 11, action: 44, state: UNENCODED, offset: 0, len: 117}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_removed_actions_refragments_after_removed_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:42}, linkId: , encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 117}, PackageFragmentInfo{package: 8, action: 42, state: UNENCODED, offset: 0, len: 58}, ], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:43}, linkId: , encoding size: 1, fragments: [PackageFragmentInfo{package: 8, action: 43, state: UNENCODED, offset: 58, len: 59}, PackageFragmentInfo{package: 9, action: 43, state: UNENCODED, offset: 0, len: 117}, PackageFragmentInfo{package: 10, action: 43, state: UNENCODED, offset: 0, len: 58}, ], toBeRemoved: 1}, 
+        ActionInfo{action: Action{ id:44}, linkId: , encoding size: 1, fragments: [PackageFragmentInfo{package: 10, action: 44, state: UNENCODED, offset: 58, len: 59}, PackageFragmentInfo{package: 11, action: 44, state: UNENCODED, offset: 0, len: 117}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 3, packageFragments: [PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 117}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 8, pendingEncodeHandle: 4, packageFragments: [PackageFragmentInfo{package: 8, action: 42, state: UNENCODED, offset: 0, len: 58}, PackageFragmentInfo{package: 8, action: 43, state: UNENCODED, offset: 58, len: 59}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 9, pendingEncodeHandle: 5, packageFragments: [PackageFragmentInfo{package: 9, action: 43, state: UNENCODED, offset: 0, len: 117}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 10, pendingEncodeHandle: 6, packageFragments: [PackageFragmentInfo{package: 10, action: 43, state: UNENCODED, offset: 0, len: 58}, PackageFragmentInfo{package: 10, action: 44, state: UNENCODED, offset: 58, len: 59}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 11, pendingEncodeHandle: 7, packageFragments: [PackageFragmentInfo{package: 11, action: 44, state: UNENCODED, offset: 0, len: 117}, ] }, 
+    ]
+}
+MockComponentManagerInternal::getLinks: 
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_removed_actions_refragments_after_removed_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        7:PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 117}, 
+        8:PackageFragmentInfo{package: 8, action: 42, state: UNENCODED, offset: 0, len: 117}, 
+        9:PackageFragmentInfo{package: 9, action: 42, state: UNENCODED, offset: 0, len: 117}, 
+        10:PackageFragmentInfo{package: 10, action: 42, state: UNENCODED, offset: 0, len: 117}, 
+        11:PackageFragmentInfo{package: 11, action: 42, state: UNENCODED, offset: 0, len: 117}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_removed_actions_refragments_after_removed_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:42}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 117}, PackageFragmentInfo{package: 8, action: 42, state: UNENCODED, offset: 0, len: 117}, PackageFragmentInfo{package: 9, action: 42, state: UNENCODED, offset: 0, len: 117}, PackageFragmentInfo{package: 10, action: 42, state: UNENCODED, offset: 0, len: 117}, PackageFragmentInfo{package: 11, action: 42, state: UNENCODED, offset: 0, len: 117}, ], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:43}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 1}, 
+        ActionInfo{action: Action{ id:44}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 3, packageFragments: [PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 117}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 8, pendingEncodeHandle: 4, packageFragments: [PackageFragmentInfo{package: 8, action: 42, state: UNENCODED, offset: 0, len: 117}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 9, pendingEncodeHandle: 5, packageFragments: [PackageFragmentInfo{package: 9, action: 42, state: UNENCODED, offset: 0, len: 117}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 10, pendingEncodeHandle: 6, packageFragments: [PackageFragmentInfo{package: 10, action: 42, state: UNENCODED, offset: 0, len: 117}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 11, pendingEncodeHandle: 7, packageFragments: [PackageFragmentInfo{package: 11, action: 42, state: UNENCODED, offset: 0, len: 117}, ] }, 
+    ]
+}

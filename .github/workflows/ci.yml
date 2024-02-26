@@ -1,0 +1,355 @@
+name: Continuous Integration
+
+on:
+  push:
+    paths-ignore:
+      - ".github/workflows/build-image.yml"
+      - ".github/workflows/file-server.yml"
+      - ".github/workflows/whiteboard.yml"
+      - "twosix-file-server/**"
+      - "twosix-whiteboard/**"
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-linux-x86_64:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Remove unnecessary files
+        run: |
+          rm -rf /usr/share/dotnet
+          rm -rf "$AGENT_TOOLSDIRECTORY"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Linux x86_64
+        run: ./build.sh --linux
+
+      - name: Create Build Artifact
+        run: tar cfz linux-x86_64.tar.gz -C kits .
+      
+      - name: Create Package Artifact
+        run: |
+          ./racesdk/create-package.sh --linux --skip-file-artifacts
+          tar cfz race-sdk-package-linux-x86_64.tar.gz -C racesdk package/LINUX_x86_64
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-x86_64
+          path: linux-x86_64.tar.gz
+          retention-days: 10
+
+      - name: Upload Package Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: race-sdk-package-linux-x86_64
+          path: race-sdk-package-linux-x86_64.tar.gz
+          retention-days: 10
+
+  build-android-x86_64:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Remove unnecessary files
+        run: |
+          rm -rf /usr/share/dotnet
+          rm -rf "$AGENT_TOOLSDIRECTORY"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Android x86_64
+        run: ./build.sh --android
+
+      - name: Create Build Artifact
+        run: tar cfz android-x86_64.tar.gz -C kits .
+      
+      - name: Create Package Artifact
+        run: |
+          ./racesdk/create-package.sh --android --skip-file-artifacts
+          tar cfz race-sdk-package-android-x86_64.tar.gz -C racesdk package/ANDROID_x86_64
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-x86_64
+          path: android-x86_64.tar.gz
+          retention-days: 10
+
+      - name: Upload Package Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: race-sdk-package-android-x86_64
+          path: race-sdk-package-android-x86_64.tar.gz
+          retention-days: 10
+
+  build-linux-arm64-v8a:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Remove unnecessary files
+        run: |
+          rm -rf /usr/share/dotnet
+          rm -rf "$AGENT_TOOLSDIRECTORY"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Linux arm64-v8a
+        run: ./build.sh --linux-arm64
+
+      - name: Create Build Artifact
+        run: tar cfz linux-arm64-v8a.tar.gz -C kits .
+      
+      - name: Create Package Artifact
+        run: |
+          ./racesdk/create-package.sh --linux-arm64 --skip-file-artifacts
+          tar cfz race-sdk-package-linux-arm64-v8a.tar.gz -C racesdk package/LINUX_arm64-v8a
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-arm64-v8a
+          path: linux-arm64-v8a.tar.gz
+          retention-days: 10
+
+      - name: Upload Package Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: race-sdk-package-linux-arm64-v8a
+          path: race-sdk-package-linux-arm64-v8a.tar.gz
+          retention-days: 10
+
+  build-android-arm64-v8a:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Remove unnecessary files
+        run: |
+          rm -rf /usr/share/dotnet
+          rm -rf "$AGENT_TOOLSDIRECTORY"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Android arm64-v8a
+        run: ./build.sh --android-arm64
+
+      - name: Create Build Artifact
+        run: tar cfz android-arm64-v8a.tar.gz -C kits .
+      
+      - name: Create Package Artifact
+        run: |
+          ./racesdk/create-package.sh --android-arm64 --skip-file-artifacts
+          tar cfz race-sdk-package-android-arm64-v8a.tar.gz -C racesdk package/ANDROID_arm64-v8a
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-arm64-v8a
+          path: android-arm64-v8a.tar.gz
+          retention-days: 10
+
+      - name: Upload Package Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: race-sdk-package-android-arm64-v8a
+          path: race-sdk-package-android-arm64-v8a.tar.gz
+          retention-days: 10
+
+  test-unit:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build and Run Unit Tests
+        run: ./build.sh --linux --cmake_args -DENABLE_CODE_LINTING=OFF --target run_tests --no-kits
+
+      - name: Test With Valgrind
+        # shuffle the order of the tests to potentially uncover weirdness
+        # note that you can reproduce the test results by finding the seed in the log output and
+        # setting the environment variable GTEST_RANDOM_SEED to that value.
+        env:
+          GTEST_SHUFFLE: 1
+        run: ./build.sh --linux --cmake_args -DENABLE_CODE_LINTING=OFF --target valgrind --no-kits
+
+  test-coverage:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build and Run Unit Tests
+        # shuffle the order of the tests to potentially uncover weirdness
+        # note that you can reproduce the test results by finding the seed in the log output and
+        # setting the environment variable GTEST_RANDOM_SEED to that value.
+        env:
+          GTEST_SHUFFLE: 1
+        run: ./build.sh --coverage --target coverage --no-kits
+
+  test-format:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tst-race/race-images/race-compile:main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check Format
+        run: ./build.sh --linux --target check_format --no-kits
+
+  combine-build-artifacts:
+    runs-on: ubuntu-latest
+    needs:
+      - build-linux-x86_64
+      - build-android-x86_64
+      - build-linux-arm64-v8a
+      - build-android-arm64-v8a
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download Platform-Specific Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: platform-supertars
+
+      - name: Extract Platform-Specific Build Artifacts
+        run: |
+          mkdir -p platform-kits/linux-x86_64
+          mkdir -p platform-kits/android-x86_64
+          mkdir -p platform-kits/linux-arm64-v8a
+          mkdir -p platform-kits/android-arm64-v8a
+          tar xf platform-supertars/linux-x86_64/linux-x86_64.tar.gz -C platform-kits/linux-x86_64
+          tar xf platform-supertars/android-x86_64/android-x86_64.tar.gz -C platform-kits/android-x86_64
+          tar xf platform-supertars/linux-arm64-v8a/linux-arm64-v8a.tar.gz -C platform-kits/linux-arm64-v8a
+          tar xf platform-supertars/android-arm64-v8a/android-arm64-v8a.tar.gz -C platform-kits/android-arm64-v8a
+      
+      - name: Merge Artifact Kits
+        run: python3 merge-kits.py platform-kits -v
+
+      - name: Get Repository Name
+        id: repo-name
+        uses: MariachiBear/get-repo-name-action@v1.1.0
+
+      - name: Create Build Artifact
+        run: "tar cfz ${{ steps.repo-name.outputs.repository-name }}.tar.gz -C kits ."
+      
+      - name: Extract SDK Packages From Artifacts
+        run: |
+          tar xf platform-supertars/race-sdk-package-linux-x86_64/race-sdk-package-linux-x86_64.tar.gz -C racesdk
+          tar xf platform-supertars/race-sdk-package-linux-arm64-v8a/race-sdk-package-linux-arm64-v8a.tar.gz -C racesdk
+          tar xf platform-supertars/race-sdk-package-android-x86_64/race-sdk-package-android-x86_64.tar.gz -C racesdk
+          tar xf platform-supertars/race-sdk-package-android-arm64-v8a/race-sdk-package-android-arm64-v8a.tar.gz -C racesdk
+
+      - name: Copy CMake and Mock Files to Package
+        run: ./racesdk/create-package.sh --skip-build-artifacts
+
+      - name: Create Package Artifact
+        run: tar cfz racesdk-package.tar.gz -C racesdk package
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: "${{ steps.repo-name.outputs.repository-name }}.tar.gz"
+          path: "${{ steps.repo-name.outputs.repository-name }}.tar.gz"
+          retention-days: 10
+
+      - name: Upload Package Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: racesdk-package.tar.gz
+          path: racesdk-package.tar.gz
+          retention-days: 10
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ${{ steps.repo-name.outputs.repository-name }}.tar.gz
+            kits/*.tar.gz
+
+  sdk-image:
+    runs-on: ubuntu-latest
+    needs: combine-build-artifacts
+    steps:
+      - name: Remove unnecessary files
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: racesdk-package.tar.gz
+      
+      - name: Extract SDK Package From Artifact
+        run: tar xf racesdk-package.tar.gz -C racesdk
+      
+      - name: Log in to Container Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: 'arm64,arm'
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Extract Docker Metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/${{ github.repository }}/race-sdk
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{raw}}
+            type=semver,pattern=v{{major}}.{{minor}}
+            type=semver,pattern=v{{major}}
+
+      - name: Configure Docker Caching
+        id: cache
+        uses: int128/docker-build-cache-config-action@v1
+        with:
+          image: ghcr.io/${{ github.repository }}/race-sdk/cache
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: racesdk
+          file: racesdk/docker-image/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: ${{ steps.cache.outputs.cache-from }}
+          cache-to: ${{ steps.cache.outputs.cache-to }}

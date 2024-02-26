@@ -1,0 +1,26 @@
+{
+    "version": 4,
+    "include": ["common.json"],
+    "configurePresets": [
+        {
+            "name": "ANDROID_arm64-v8a",
+            "displayName": "Android arm64-v8a Config",
+            "description": "Android arm64-v8a build using NDK cross-compile",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/ANDROID_arm64-v8a",
+            "toolchainFile": "$env{ANDROID_NDK}/android-arm64-v8a.toolchain.cmake",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-android-arm64-v8a",
+                "CMAKE_INSTALL_PREFIX": "/android/arm64-v8a",
+                "CMAKE_STAGING_PREFIX": "${sourceDir}/racesdk/package/ANDROID_arm64-v8a",
+                "TARGET_ARCHITECTURE": "ANDROID_arm64-v8a"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "ANDROID_arm64-v8a",
+            "configurePreset": "ANDROID_arm64-v8a"
+        }
+    ]
+}

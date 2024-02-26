@@ -1,0 +1,6 @@
+CommsPlugin
+gopath
+*.so
+libPluginGolang.h
+libPluginCommsTwoSixGolang.h
+_obj

@@ -1,0 +1,46 @@
+BootstrapInstanceManagerTestFixture_handleNMReady_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleNMReady_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleNMReady_Test::getPluginsForChannel:  with channelGid=MockComms-0/channel1
+BootstrapInstanceManagerTestFixture_handleNMReady_Test::getPluginsForChannel:  with channelGid=MockComms-1/channel2
+BootstrapInstanceManagerTestFixture_handleNMReady_Test::getNM: 
+MockBootstrapThread::fetchArtifacts:  with artifactsList=["MockComms-0","MockComms-1","MockNMWrapper","race"], platform=linux, architecture=x86_64, nodeType=client
+MockBootstrapThread::serveFiles:  with linkId=, *bootstrapInfo=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [
+        "MockComms-0",
+        "MockComms-1"
+    ],
+    "connectionHandle": 1,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 2
+}
+
+BootstrapInstanceManagerTestFixture_handleNMReady_Test::TestBody:  with *bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [
+        "MockComms-0",
+        "MockComms-1"
+    ],
+    "connectionHandle": 1,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 3
+}
+

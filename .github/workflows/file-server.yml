@@ -1,0 +1,22 @@
+name: Stub File Server
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/build-image.yml"
+      - ".github/workflows/file-server.yml"
+      - "twosix-file-server/**"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-image:
+    uses: ./.github/workflows/build-image.yml
+    with:
+      context: twosix-file-server
+      dockerfile: twosix-file-server/Dockerfile
+      image-name: ${{ github.repository }}/twosix-file-server
+      override-tag: main

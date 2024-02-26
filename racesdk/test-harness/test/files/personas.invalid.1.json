@@ -1,0 +1,22 @@
+[
+  {
+    "displayName": "RACE Client 1",
+    "personaType": "client",
+    "publicKey": "1"
+  },
+  {
+    "displayName": "RACE Client 2",
+    "personaType": "client",
+    "publicKey": "2"
+  },
+  {
+    "displayName": "RACE Server 1",
+    "personaType": "server",
+    "publicKey": "1001"
+  },
+  {
+    "displayName": "RACE Server 2",
+    "personaType": "server",
+    "publicKey": "1002"
+  }
+]

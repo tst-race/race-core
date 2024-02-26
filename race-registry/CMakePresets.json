@@ -1,0 +1,6 @@
+{
+    "version": 4,
+    "include": [
+        "cmake/presets/linux_x86_64.json"
+    ]
+}

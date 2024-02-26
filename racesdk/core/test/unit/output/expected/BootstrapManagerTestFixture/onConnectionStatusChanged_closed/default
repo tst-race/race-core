@@ -1,0 +1,17 @@
+MockBootstrapInstanceManager::handleConnectionClosed:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 1,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "",
+        "node_type": "",
+        "platform": ""
+    },
+    "passphrase": "",
+    "prepareBootstrapHandle": 0,
+    "state": 0
+}
+

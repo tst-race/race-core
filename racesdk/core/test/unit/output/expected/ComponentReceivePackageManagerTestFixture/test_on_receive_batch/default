@@ -1,0 +1,4 @@
+ComponentReceivePackageManagerTestFixture_test_on_receive_batch_Test::TestBody:  with receiveManager=ReceivePackageManager{nextDecodingHandle:0, pendingDecodings: {}}
+MockComponentManagerInternal::encodingComponentFromEncodingParams:  with params=EncodingParameters{ linkId: mockLinkId, type: text/plain, encodePackage: 0, json: }
+MockEncodingComponentWrapper::decodeBytes:  with handle=1, params=EncodingParameters{ linkId: mockLinkId, type: text/plain, encodePackage: 0, json: }, bytes.size()=10
+ComponentReceivePackageManagerTestFixture_test_on_receive_batch_Test::TestBody:  with receiveManager=ReceivePackageManager{nextDecodingHandle:1, pendingDecodings: {1:mockLinkId, }}

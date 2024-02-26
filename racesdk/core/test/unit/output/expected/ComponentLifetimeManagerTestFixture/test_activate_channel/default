@@ -1,0 +1,8 @@
+ComponentLifetimeManagerTestFixture_test_activate_channel_Test::TestBody:  with lifetimeManager=LifetimeManager{state:UNACTIVATED, transport: nullopt, usermodel: nullopt, encodingsByType: {}, encodings: {}, wrappers: {}, componentStates: {}, idComponentMap: {}}
+MockComponentPlugin::transport.createTransport:  with name=transport, roleName=role, pluginConfig={, , , , }
+
+MockComponentPlugin::usermodel.createUserModel:  with name=usermodel, roleName=role, pluginConfig={, , , , }
+
+MockComponentPlugin::encoding.createEncoding:  with name=encoding, roleName=role, pluginConfig={, , , , }
+
+ComponentLifetimeManagerTestFixture_test_activate_channel_Test::TestBody:  with lifetimeManager=LifetimeManager{state:WAITING_FOR_COMPONENTS, transport: <TransportComponentWrapper>, usermodel: <UserModelComponentWrapper>, encodingsByType: {}, encodings: {encoding:<EncodingComponentWrapper>, }, wrappers: {<Sdk Wrapper for transport>, <Sdk Wrapper for usermodel>, <Sdk Wrapper for encoding>, }, componentStates: {encoding:COMPONENT_STATE_INIT, transport:COMPONENT_STATE_INIT, usermodel:COMPONENT_STATE_INIT, }, idComponentMap: {encoding:<EncodingComponentWrapper>, transport:<TransportComponentWrapper>, usermodel:<UserModelComponentWrapper>, }}

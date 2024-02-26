@@ -1,0 +1,17 @@
+MockBootstrapInstanceManager::handleLinkCreated:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bsChannelId",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 1,
+    "deviceInfo": {
+        "arch": "",
+        "node_type": "",
+        "platform": ""
+    },
+    "passphrase": "",
+    "prepareBootstrapHandle": 0,
+    "state": 0
+}
+, linkId=link id

@@ -1,0 +1,27 @@
+{
+    "version": 4,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Default Config",
+            "description": "Default build configuration",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/cmake-build",
+            "cacheVariables": {
+                "BUILD_ANDROID_DAEMON": "ON",
+                "BUILD_LINUX_DAEMON": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default"
+        }
+    ]
+}

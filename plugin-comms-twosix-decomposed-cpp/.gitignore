@@ -1,0 +1,9 @@
+*.diff
+.DS_Store
+._*
+.vscode
+cmake
+build
+
+# coverage profiling output
+default.profraw

@@ -1,0 +1,43 @@
+ComponentPackageManagerTestFixture_test_encodeCoverTrafficForAction_multiple_packages_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 6, action: 3, state: UNENCODED, offset: 0, len: 19}, 
+        1:PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_encodeCoverTrafficForAction_multiple_packages_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 6, action: 3, state: UNENCODED, offset: 0, len: 19}, PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 6, pendingEncodeHandle: 3, packageFragments: [PackageFragmentInfo{package: 6, action: 3, state: UNENCODED, offset: 0, len: 19}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 3, packageFragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, ] }, 
+    ]
+}
+MockComponentManagerInternal::getLink:  with linkId=mockLinkId
+MockComponentManagerInternal::encodingComponentFromEncodingParams:  with params=EncodingParameters{ linkId: , type: , encodePackage: 0, json: }
+MockEncodingComponentWrapper::encodeBytes:  with handle=1, params=EncodingParameters{ linkId: mockLinkId, type: , encodePackage: 0, json: }, bytes.size()=51
+ComponentPackageManagerTestFixture_test_encodeCoverTrafficForAction_multiple_packages_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{
+        1:EncodingInfo{ params: EncodingParameters{ linkId: mockLinkId, type: , encodePackage: 0, json: }, pendingEncodeHandle: 1, state: ENCODING }, 
+    }
+    nextEncodingHandle: 1
+    fragments: {
+        0:PackageFragmentInfo{package: 6, action: 3, state: ENCODING, offset: 0, len: 19}, 
+        1:PackageFragmentInfo{package: 7, action: 3, state: ENCODING, offset: 0, len: 19}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_encodeCoverTrafficForAction_multiple_packages_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 6, action: 3, state: ENCODING, offset: 0, len: 19}, PackageFragmentInfo{package: 7, action: 3, state: ENCODING, offset: 0, len: 19}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 6, pendingEncodeHandle: 1, packageFragments: [PackageFragmentInfo{package: 6, action: 3, state: ENCODING, offset: 0, len: 19}, ] }, 
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 1, packageFragments: [PackageFragmentInfo{package: 7, action: 3, state: ENCODING, offset: 0, len: 19}, ] }, 
+    ]
+}

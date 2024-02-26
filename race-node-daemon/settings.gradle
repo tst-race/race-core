@@ -1,0 +1,4 @@
+include ':race-daemon-android'
+include ':race-daemon-linux'
+include ':race-daemon-sdk'
+rootProject.name = "RACE Node Daemon"

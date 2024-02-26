@@ -1,0 +1,22 @@
+name: Stub Whiteboard
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build-image.yml"
+      - ".github/workflows/whiteboard.yml"
+      - "twosix-whiteboard/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-image:
+    uses: ./.github/workflows/build-image.yml
+    with:
+      context: twosix-whiteboard/src
+      dockerfile: twosix-whiteboard/Dockerfile
+      image-name: ${{ github.repository }}/twosix-whiteboard
+      override-tag: main

@@ -1,0 +1,12 @@
+{
+    "plugins": [
+        {
+            "file_path": "PluginCommsTwoSixJava",
+            "plugin_type": "comms",
+            "file_type": "shared_library",
+            "node_type": "any",
+            "shared_library_path": "libPluginCommsTwoSixJava.so",
+            "channels": ["twoSixDirectJava", "twoSixIndirectJava"]
+        }
+    ]
+}

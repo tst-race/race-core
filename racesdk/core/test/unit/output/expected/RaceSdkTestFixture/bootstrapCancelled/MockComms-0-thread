@@ -1,0 +1,2 @@
+MockBootstrapManager::onLinkStatusChanged:  with handle=4, linkId=MockComms-0/MockComms-0/channel2/LinkID_20, status=LINK_CREATED, properties=linkType: 3, transmissionType: 2, reliable: 0
+

@@ -1,0 +1,30 @@
+ComponentManagerTestFixture_test_deactivate_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: WAITING_FOR_COMPONENTS
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {encoder: <EncodingComponentWrapper>, }
+	 transport: <TransportComponentWrapper>
+	 usermodel: <UserModelComponentWrapper>
+	 wrappers: [<Sdk Wrapper for transport_id>, <Sdk Wrapper for usermodel_id>, <Sdk Wrapper for encoder>, ]
+	 componentStates: {encoder: COMPONENT_STATE_INIT, transport_id: COMPONENT_STATE_INIT, usermodel_id: COMPONENT_STATE_INIT, }
+	 activateHandle: 42
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}
+ComponentManagerTestFixture_test_deactivate_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: UNACTIVATED
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {}
+	 transport: nullopt
+	 usermodel: nullopt
+	 wrappers: []
+	 componentStates: {}
+	 activateHandle: 42
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}

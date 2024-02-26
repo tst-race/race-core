@@ -1,0 +1,4 @@
+{
+	"log_level": "INFO",
+	"resize_threshold": 500000000
+}

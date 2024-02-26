@@ -1,0 +1,12 @@
+ComponentPackageManagerTestFixtureNonParameterized_test_onBytesEncoded_failed_encoding_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{
+        42:EncodingInfo{ params: EncodingParameters{ linkId: , type: , encodePackage: 0, json: }, pendingEncodeHandle: 42, state: ENCODING }, 
+    }
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixtureNonParameterized_test_onBytesEncoded_failed_encoding_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}

@@ -1,0 +1,29 @@
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_no_pending_packages_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_no_pending_packages_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:4}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}
+MockComponentManagerInternal::getLinks: 
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_no_pending_packages_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_updatedActionsForLink_new_actions_no_pending_packages_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:4}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}

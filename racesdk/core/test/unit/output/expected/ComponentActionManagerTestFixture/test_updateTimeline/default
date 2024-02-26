@@ -1,0 +1,45 @@
+ComponentActionManagerTestFixture_test_updateTimeline_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}
+ComponentActionManagerTestFixture_test_updateTimeline_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: []
+    packageQueue: []
+}
+ComponentActionManagerTestFixture_test_updateTimeline_Test::TestBody:  with mockComponentManager.mockLink2=Link{
+    linkId: mockLinkId2
+    connections: []
+    actionQueue: []
+    packageQueue: []
+}
+MockComponentManagerInternal::getTransport: 
+MockComponentManagerInternal::encodingComponentFromEncodingParams:  with params=EncodingParameters{ linkId: mockLinkId, type: */*, encodePackage: 1, json: {}}
+MockEncodingComponentWrapper::getEncodingPropertiesForParameters:  with params=EncodingParameters{ linkId: mockLinkId, type: */*, encodePackage: 1, json: {}}
+MockComponentManagerInternal::getTransport: 
+MockComponentManagerInternal::encodingComponentFromEncodingParams:  with params=EncodingParameters{ linkId: *, type: */*, encodePackage: 1, json: {}}
+MockEncodingComponentWrapper::getEncodingPropertiesForParameters:  with params=EncodingParameters{ linkId: *, type: */*, encodePackage: 1, json: {}}
+MockComponentManagerInternal::getTransport: 
+MockComponentManagerInternal::encodingComponentFromEncodingParams:  with params=EncodingParameters{ linkId: mockLinkId, type: */*, encodePackage: 1, json: {}}
+MockEncodingComponentWrapper::getEncodingPropertiesForParameters:  with params=EncodingParameters{ linkId: mockLinkId, type: */*, encodePackage: 1, json: {}}
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+ComponentActionManagerTestFixture_test_updateTimeline_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: 3.0000000000000000, nextEncodeTime: 2.8999999999999999, lastEncodeTime: 0.0000000000000000, actions: [ActionInfo{action: Action{ id:1}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, ActionInfo{action: Action{ id:2}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, ]}
+ComponentActionManagerTestFixture_test_updateTimeline_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:1}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:2}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}
+ComponentActionManagerTestFixture_test_updateTimeline_Test::TestBody:  with mockComponentManager.mockLink2=Link{
+    linkId: mockLinkId2
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:2}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}

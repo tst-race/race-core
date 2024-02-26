@@ -1,0 +1,136 @@
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 7
+}
+

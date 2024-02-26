@@ -1,0 +1,21 @@
+MockRaceLinks::setPersonasForLink:  with linkId=, personasJson=["personaName"]
+BootstrapInstanceManagerTestFixture_handleBootstrapPkgReceived_Test::getNM: 
+MockNMWrapper::onBootstrapPkgReceived:  with persona=personaName, pkgJson=[97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97,97], timeout=0
+BootstrapInstanceManagerTestFixture_handleBootstrapPkgReceived_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleBootstrapPkgReceived_Test::TestBody:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 4
+}
+

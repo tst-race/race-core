@@ -1,0 +1,2 @@
+MockEncoding::getEncodingProperties: 
+MockEncoding::getEncodingPropertiesForParameters:  with params=EncodingParameters{ linkId: default link id, type: */*, encodePackage: 1, json: }

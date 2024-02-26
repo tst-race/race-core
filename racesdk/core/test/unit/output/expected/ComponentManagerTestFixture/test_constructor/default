@@ -1,0 +1,15 @@
+ComponentManagerTestFixture_test_constructor_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: INITIALIZING
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {}
+	 transport: nullopt
+	 usermodel: nullopt
+	 wrappers: []
+	 componentStates: {}
+	 activateHandle: 0
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}

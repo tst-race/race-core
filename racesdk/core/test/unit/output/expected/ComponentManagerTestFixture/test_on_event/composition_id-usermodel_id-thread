@@ -1,0 +1,3 @@
+MockUserModel::getUserModelProperties: 
+MockUserModel::getTimeline:  with start=<Timestamp>, range=600.0000000000000000
+MockUserModel::onTransportEvent:  with event=Event{}

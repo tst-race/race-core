@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+dependencies {
+    implementation project(':race-daemon-sdk')
+    implementation 'org.apache.commons:commons-compress:1.21'
+    implementation 'org.json:json:20210307'
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+    testImplementation 'junit:junit:4.+'
+}
+
+application {
+    mainClassName = 'com.twosix.race.daemon.Daemon'
+}

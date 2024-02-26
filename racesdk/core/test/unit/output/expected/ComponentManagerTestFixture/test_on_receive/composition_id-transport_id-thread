@@ -1,0 +1,3 @@
+MockTransport::getTransportProperties: 
+ComponentManagerTestFixture_test_on_receive_Test::createLink:  with handle=43, linkId=default link id
+MockTransport::getLinkProperties:  with linkId=default link id

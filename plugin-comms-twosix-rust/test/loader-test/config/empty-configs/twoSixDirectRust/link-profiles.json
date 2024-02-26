@@ -1,0 +1,9 @@
+{
+    "links": [],
+    "settings": {
+        "port-range": {
+            "end": 30002,
+            "start": 20002
+        }
+    }
+}

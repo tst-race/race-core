@@ -1,0 +1,27 @@
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_valid_package_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 7, action: nullptr, state: DONE, offset: 0, len: 19}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_valid_package_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: []
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 3, packageFragments: [PackageFragmentInfo{package: 7, action: nullptr, state: DONE, offset: 0, len: 19}, ] }, 
+    ]
+}
+MockRaceSdkComms::onPackageStatusChanged:  with handle=7, status=PACKAGE_SENT, timeout=-2147483648
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_valid_package_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_valid_package_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: []
+    packageQueue: []
+}

@@ -1,0 +1,16 @@
+[package]
+name = "plugin_comms_twosix_rust"
+version = "0.1.0"
+authors = ["RACE Two Six Team <race@twosixlabs.com>"]
+edition = "2018"
+
+[dependencies]
+shims =  { path = "../shims/", version = "0.1.0" }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+argparse = "0.2.2"
+libc = "0.2"
+scopeguard = "1.0"
+restson = "0.7"
+base64 = "0.13.0"
+clokwerk = "0.3.4"

@@ -1,0 +1,77 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+get after for non-existent category
+{"index": 0}
+{"index": 0}
+{"index": 0}
+{"index": 0}
+posting
+{"index":0}
+{"index":1}
+{"index":0}
+get after for existent category
+{"index": 0}
+{"index": 0}
+{"index": 1}
+{"index": 2}
+{"index": 2}
+{"index": 2}
+{"index": 0}
+{"index": 0}
+{"index": 0}
+{"index": 0}
+{"index": 1}
+{"index": 1}
+posting 2
+{"index":2}
+{"index":3}
+{"index":1}
+get after for existent category (2)
+{"index": 0}
+{"index": 0}
+{"index": 1}
+{"index": 2}
+{"index": 2}
+{"index": 2}
+{"index": 3}
+{"index": 4}
+{"index": 4}
+{"index": 4}
+{"index": 0}
+{"index": 0}
+{"index": 0}
+{"index": 0}
+{"index": 1}
+{"index": 1}
+{"index": 1}
+{"index": 1}
+{"index": 2}
+{"index": 2}
+posting 3
+after for timestamps returned by post
+{"index": 0}
+{"index": 4}
+{"index": 4}
+{"index": 5}
+{"index": 5}
+{"index": 6}
+{"index": 6}
+{"index": 6}
+{"index": 6}
+{"index": 0}
+{"index": 2}
+{"index": 2}
+{"index": 2}
+{"index": 2}
+{"index": 2}
+{"index": 2}
+{"index": 3}
+{"index": 3}
+timestamp matches expected
+timestamp matches expected
+timestamp matches expected
+timestamp matches expected
+timestamp matches expected
+timestamp matches expected
+stop containers

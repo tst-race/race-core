@@ -1,0 +1,66 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}"/helpers.sh
+
+DATA_DIR="${DIR}/save_test_data"
+mkdir "${DATA_DIR}"
+REDIS_DATA_VOLUME="-v ${DATA_DIR}:/data"
+
+start_containers "${REDIS_DATA_VOLUME}"
+
+# 10 megabyte string
+LONG_STRING=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 10M)
+
+sleep 2
+
+echo "save empty db" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/save/1" | jq -c  'del(.timestamp)'
+DB_SIZE=$(stat --format %s "${DATA_DIR}/dump.rdb")
+[ ${DB_SIZE} -lt 100 ] && echo "db size matches expected" || echo "unexpected db size"
+
+echo "save long string" | tee >(cat >&2)
+
+curl --fail --silent --show-error --request POST localhost:5000/post/long --header 'Content-Type: application/json' -d @- <<CURL_DATA | jq -c  'del(.timestamp)'
+{ "data": "$LONG_STRING" }
+CURL_DATA
+
+curl --fail --silent --show-error --request GET "localhost:5000/save/1" | jq -c  'del(.timestamp)'
+DB_SIZE=$(stat --format %s "${DATA_DIR}/dump.rdb")
+[ ${DB_SIZE} -gt 10000000 ] && echo "db size matches expected" || echo "unexpected db size"
+
+echo "resize to get rid of long string" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/resize/0" | jq -c  'del(.timestamp)'
+
+curl --fail --silent --show-error --request GET "localhost:5000/save/1" | jq -c  'del(.timestamp)'
+DB_SIZE=$(stat --format %s "${DATA_DIR}/dump.rdb")
+[ ${DB_SIZE} -lt 200 ] && echo "db size matches expected" || echo "unexpected db size"
+
+echo "save post" | tee >(cat >&2)
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"0" }' | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/save/1" | jq -c  'del(.timestamp)'
+DB_SIZE=$(stat --format %s "${DATA_DIR}/dump.rdb")
+[ ${DB_SIZE} -gt 200 ] && echo "db size matches expected" || echo "unexpected db size"
+[ ${DB_SIZE} -lt 400 ] && echo "db size matches expected" || echo "unexpected db size"
+stop_containers
+start_containers "${REDIS_DATA_VOLUME}"
+sleep 2
+
+echo "get post after restarting containers" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0" | jq -c  'del(.timestamp)'
+echo "post again" | tee >(cat >&2)
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"1" }' | jq -c  'del(.timestamp)'
+
+echo "save post on shutdown" | tee >(cat >&2)
+stop_containers
+DB_SIZE=$(stat --format %s "${DATA_DIR}/dump.rdb")
+[ ${DB_SIZE} -gt 400 ] && echo "db size matches expected" || echo "unexpected db size"
+[ ${DB_SIZE} -lt 500 ] && echo "db size matches expected" || echo "unexpected db size"
+
+start_containers "${REDIS_DATA_VOLUME}"
+sleep 2
+
+echo "get post after restarting containers" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1" | jq -c  'del(.timestamp)'
+stop_containers
+rm -r save_test_data

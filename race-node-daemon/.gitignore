@@ -1,0 +1,54 @@
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Android library files
+*.aar
+
+# Java class files
+*.class
+*.jar
+!gradle-wrapper.jar
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Android Studio
+*.iml
+.idea
+#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.gradle
+build/
+.navigation
+captures/
+output.json 
+
+# Eclipse/VS Code
+.classpath
+.project
+.settings/
+
+#NDK
+obj/
+.externalNativeBuild
+*.so
+
+# Ignore Gradle build output directory
+build
+
+# CMake
+cmake-build/
+cmake

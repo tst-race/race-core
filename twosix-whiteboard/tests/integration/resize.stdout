@@ -1,0 +1,158 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+{"mem_usage":0}
+{"index":0}
+{"index":1}
+{"index":0}
+{"mem_usage":0}
+{"mem_usage":0}
+get latest index for non-existent category
+{"latest":2}
+{"latest":1}
+get index for non-existent category
+get range for non-existent category
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+post to previously non-existent category
+{"index":2}
+get latest index for existent category
+{"latest":3}
+get latest index for non-existent category when another category exists
+{"latest":1}
+get index for existent category
+{"data":"0"}
+{"data":"0"}
+get index for non-existent category when another category exists
+get non-existent range for existent category
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+{"data":[],"length":3}
+get existent range for existent category
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+{"data":["0"],"length":3}
+get range for non-existent category when another category exists
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+post to existent category
+{"index":3}
+get latest index for existent category (2)
+{"latest":4}
+get index for existent category (2)
+{"data":"0"}
+{"data":"1"}
+{"data":"1"}
+get non-existent range for existent category
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+{"data":[],"length":4}
+get existent range for existent category
+{"data":["0"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0"],"length":4}
+{"data":["0"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0"],"length":4}
+{"data":["0"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0","1"],"length":4}
+{"data":["0"],"length":4}
+{"data":["1"],"length":4}
+{"data":["1"],"length":4}
+{"data":["1"],"length":4}
+{"data":["1"],"length":4}
+{"data":["1"],"length":4}
+{"data":["1"],"length":4}
+post to second category
+{"index":1}
+get latest index for first category
+{"latest":4}
+get index for first category
+{"data":"0"}
+{"data":"1"}
+{"data":"1"}
+get latest index for second category
+{"latest":2}
+get index for second category
+{"data":"bar0"}
+{"data":"bar0"}
+get non-existent ranges for second category
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+get existent ranges for second category
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+{"data":["bar0"],"length":2}
+stop containers

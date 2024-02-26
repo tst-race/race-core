@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>com.twosix.race</groupId>
+  <artifactId>stub-plugins</artifactId>
+  <version>1</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <racesdk.java.shims.jar>/usr/local/lib/race/java/racesdk-java-shims-1.jar</racesdk.java.shims.jar>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.twosix.race</groupId>
+      <artifactId>racesdk-java-shims</artifactId>
+      <version>1</version>
+      <scope>system</scope>
+      <systemPath>${racesdk.java.shims.jar}</systemPath>
+    </dependency>
+  </dependencies>
+</project>

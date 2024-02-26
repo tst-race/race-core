@@ -1,0 +1,24 @@
+{
+  "bandwidth": "-1",
+  "debug": "false",
+  "plugins": [
+      {
+          "file_path": "TwoSixPythonNM",
+          "plugin_type": "network manager",
+          "file_type": "python",
+          "node_type": "client",
+          "python_module": "TwoSixPythonNM.PluginNMTwoSixClientPy",
+          "python_class": "PluginNMTwoSixClientPy",
+          "config_path": "PluginNMTwoSixStub/"
+      },
+      {
+          "file_path": "TwoSixPythonNM",
+          "plugin_type": "network manager",
+          "file_type": "python",
+          "node_type": "server",
+          "python_module": "TwoSixPythonNM.PluginNMTwoSixServerPy",
+          "python_class": "PluginNMTwoSixServerPy",
+          "config_path": "PluginNMTwoSixStub/"
+      }
+  ]
+}

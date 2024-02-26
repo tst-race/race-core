@@ -1,0 +1,4 @@
+MockTransport::getTransportProperties: 
+ComponentManagerTestFixture_test_destroy_link_Test::createLink:  with handle=43, linkId=default link id
+MockTransport::getLinkProperties:  with linkId=default link id
+MockTransport::destroyLink:  with handle=44, linkId=default link id

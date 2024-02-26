@@ -1,0 +1,5 @@
+ComponentPackageManagerTestFixtureNonParameterized_test_constructor_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}

@@ -1,0 +1,20 @@
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_Test::createBootstrapLink:  with createdLinkHandle=1, passphrase=passphrase, bootstrapChannelId=bootstrapChannel
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_Test::TestBody:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 1,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 2,
+    "state": 1
+}
+

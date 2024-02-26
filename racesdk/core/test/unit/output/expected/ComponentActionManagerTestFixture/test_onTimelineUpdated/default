@@ -1,0 +1,8 @@
+ComponentActionManagerTestFixture_test_onTimelineUpdated_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}
+MockComponentManagerInternal::getUserModel: 
+MockUserModelComponentWrapper::getTimeline:  with start=1000.1000000000000227, end=1600.0999999999999091
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+ComponentActionManagerTestFixture_test_onTimelineUpdated_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 1300.0999999999999091, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}

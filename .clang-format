@@ -1,0 +1,21 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 100
+DerivePointerAlignment: false
+PointerAlignment: Right
+UseTab: Never
+AccessModifierOffset: -4
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+SpaceBeforeCtorInitializerColon: true
+ConstructorInitializerIndentWidth: 4
+BreakBeforeInheritanceComma: false
+BreakInheritanceList: AfterColon
+BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: AfterColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+BreakBeforeTernaryOperators: false
+...

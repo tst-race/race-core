@@ -1,0 +1,33 @@
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_package_fragment_failed_remove_future_fragments_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 7, action: nullptr, state: DONE, offset: 0, len: 9}, 
+        1:PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 9, len: 10}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_package_fragment_failed_remove_future_fragments_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:42}, linkId: , encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 9, len: 10}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 3, packageFragments: [PackageFragmentInfo{package: 7, action: nullptr, state: DONE, offset: 0, len: 9}, PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 9, len: 10}, ] }, 
+    ]
+}
+MockRaceSdkComms::onPackageStatusChanged:  with handle=7, status=PACKAGE_FAILED_GENERIC, timeout=-2147483648
+MockComponentManagerInternal::getLinks: 
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_package_fragment_failed_remove_future_fragments_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_onPackageStatusChanged_package_fragment_failed_remove_future_fragments_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:42}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}

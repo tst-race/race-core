@@ -1,0 +1,26 @@
+{
+    "version": 4,
+    "include": ["common.json"],
+    "configurePresets": [
+        {
+            "name": "ANDROID_arm64-v8a_M1",
+            "displayName": "Android arm64-v8a Config for M1 Macs",
+            "description": "Android arm64-v8a build using NDK cross-compile for M1 Macs",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/ANDROID_arm64-v8a",
+            "toolchainFile": "${sourceDir}/m1-build/android_arm64-v8a/android-arm64-v8a.toolchain.cmake",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-android-arm64-v8a",
+                "CMAKE_INSTALL_PREFIX": "/android/arm64-v8a",
+                "CMAKE_STAGING_PREFIX": "${sourceDir}/racesdk/package/ANDROID_arm64-v8a",
+                "TARGET_ARCHITECTURE": "ANDROID_arm64-v8a"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "ANDROID_arm64-v8a_M1",
+            "configurePreset": "ANDROID_arm64-v8a_M1"
+        }
+    ]
+}

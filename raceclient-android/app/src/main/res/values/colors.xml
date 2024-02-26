@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="sentMessage">#3F51B5</color>
+    <color name="receivedMessage">#565C60</color>
+    <color name="messageText">#E8EAF6</color>
+    <array name="icon_colors">
+        <item>#9FA8DA</item>
+        <item>#F48FB1</item>
+        <item>#FFCC80</item>
+        <item>#80CBC4</item>
+    </array>
+    <color name="primaryText">@android:color/primary_text_light</color>
+</resources>

@@ -1,0 +1,17 @@
+BootstrapInstanceManagerTestFixture_handleConnectionOpened_Test::TestBody:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "conn-id",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 3
+}
+

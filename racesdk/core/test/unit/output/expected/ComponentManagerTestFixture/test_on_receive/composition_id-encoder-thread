@@ -1,0 +1,2 @@
+MockEncoding::getEncodingProperties: 
+ComponentManagerTestFixture_test_on_receive_Test::decodeBytes:  with decodeHandle=1, params=EncodingParameters{ linkId: , type: */*, encodePackage: 0, json: }, bytes.size()=8

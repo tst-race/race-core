@@ -1,0 +1,150 @@
+{
+    "links": [
+        {
+            "connectedTo": [
+                "race-server-1"
+            ],
+            "profile": "{\"hostname\": \"race-server-1\", \"port\": 11001, \"socketType\": \"send\"}",
+            "properties": {
+                "type": "send"
+            },
+            "utilizedBy": [
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ],
+            "profile": "{\"hostname\": \"race-server-1\", \"port\": 11001, \"socketType\": \"receive\"}",
+            "properties": {
+                "type": "receive"
+            },
+            "utilizedBy": [
+                "race-server-1"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-2"
+            ],
+            "profile": "{\"hostname\": \"race-server-2\", \"port\": 11002, \"socketType\": \"send\"}",
+            "properties": {
+                "type": "send"
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-client-1",
+                "race-client-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-client-1",
+                "race-client-2"
+            ],
+            "profile": "{\"hostname\": \"race-server-2\", \"port\": 11002, \"socketType\": \"receive\"}",
+            "properties": {
+                "type": "receive"
+            },
+            "utilizedBy": [
+                "race-server-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-client-1"
+            ],
+            "profile": "{\"hostname\": \"race-client-1\", \"port\": 10001, \"socketType\": \"send\"}",
+            "properties": {
+                "type": "send"
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-server-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-server-2"
+            ],
+            "profile": "{\"hostname\": \"race-client-1\", \"port\": 10001, \"socketType\": \"receive\"}",
+            "properties": {
+                "type": "receive"
+            },
+            "utilizedBy": [
+                "race-client-1"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-client-2"
+            ],
+            "profile": "{\"hostname\": \"race-client-2\", \"port\": 10002, \"socketType\": \"send\"}",
+            "properties": {
+                "type": "send"
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-server-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-server-2"
+            ],
+            "profile": "{\"hostname\": \"race-client-2\", \"port\": 10002, \"socketType\": \"receive\"}",
+            "properties": {
+                "type": "receive"
+            },
+            "utilizedBy": [
+                "race-client-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ],
+            "profile": "{\"multicast\": true, \"frequency\": 2, \"hostname\": \"race.example2\", \"password\": \"password1234\", \"port\": 443, \"protocol\": \"https\", \"service_name\": \"twosix-whiteboard\", \"type\": \"send\", \"url\": \"race.example2\", \"username\": \"race-server-1\", \"hashtag\": \"client2toservers\", \"email\": \"race-server-1@race-server-1.race-server-1\"}",
+            "properties": {
+                "type": "send",
+                "multicast": true
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ],
+            "profile": "{\"multicast\": true, \"frequency\": 2, \"hostname\": \"race.example2\", \"password\": \"password1234\", \"port\": 443, \"protocol\": \"https\", \"service_name\": \"twosix-whiteboard\", \"type\": \"receive\", \"url\": \"race.example2\", \"username\": \"race-server-1\", \"hashtag\": \"client2toservers\", \"email\": \"race-server-1@race-server-1.race-server-1\"}",
+            "properties": {
+                "type": "receive",
+                "multicast": true
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ]
+        }
+    ]
+}

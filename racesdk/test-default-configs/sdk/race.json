@@ -1,0 +1,40 @@
+{
+  "android_python_path": "",
+  "bandwidth": "-1",
+  "channels": [],
+  "debug": "false",
+  "environment_tags": {
+    "any": [],
+    "dmz": [
+      "service",
+      "linux"
+    ],
+    "home": [
+      "service",
+      "user",
+      "linux",
+      "gaming"
+    ],
+    "phone": [
+      "user"
+    ],
+    "service": [
+      "service",
+      "user",
+      "linux"
+    ],
+    "user": [
+      "user",
+      "linux"
+    ]
+  },
+  "isPluginFetchOnStartEnabled": "false",
+  "latency": "-1",
+  "level": "DEBUG",
+  "log-race-config": "true",
+  "log-network-manager-config": "false",
+  "log-comms-config": "false",
+  "msg-log-length": "256",
+  "plugins": [],
+  "storage-encryption": "none"
+}

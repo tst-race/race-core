@@ -1,0 +1,26 @@
+{
+    "version": 4,
+    "include": ["common.json"],
+    "configurePresets": [
+        {
+            "name": "ANDROID_x86_64",
+            "displayName": "Android x86_64 Config",
+            "description": "Android x86_64 build using NDK cross-compile",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/ANDROID_x86_64",
+            "toolchainFile": "$env{ANDROID_NDK}/android-x86_64.toolchain.cmake",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-android-x86_64",
+                "CMAKE_INSTALL_PREFIX": "/android/x86_64",
+                "CMAKE_STAGING_PREFIX": "${sourceDir}/racesdk/package/ANDROID_x86_64",
+                "TARGET_ARCHITECTURE": "ANDROID_x86_64"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "ANDROID_x86_64",
+            "configurePreset": "ANDROID_x86_64"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+*
+!**/CMakeLists.txt
+!loader/source/
+!plugin/pom.xml
+!plugin/src/
+!scripts/start-performer-services.sh

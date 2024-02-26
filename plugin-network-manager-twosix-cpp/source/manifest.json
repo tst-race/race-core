@@ -1,0 +1,20 @@
+{
+    "plugins": [
+        {
+            "file_path": "PluginNMTwoSixStub",
+            "plugin_type": "network-manager",
+            "file_type": "shared_library",
+            "node_type": "client",
+            "shared_library_path": "libPluginNMClientTwoSixStub.so",
+            "config_path": "PluginNMTwoSixStub/"
+        },
+        {
+            "file_path": "PluginNMTwoSixStub",
+            "plugin_type": "network-manager",
+            "file_type": "shared_library",
+            "node_type": "server",
+            "shared_library_path": "libPluginNMServerTwoSixStub.so",
+            "config_path": "PluginNMTwoSixStub/"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>race</groupId>
+  <artifactId>plugin-comms-twosix-java</artifactId>
+  <version>1</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <system.java.dir>/usr/local/lib/race/java</system.java.dir>
+    <racesdk.java.shims.jar>${system.java.dir}/racesdk-java-shims-1.jar</racesdk.java.shims.jar>
+    <java.library.path>/usr/local/lib</java.library.path>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12.4</version>
+        <configuration>
+          <argLine>-Djava.library.path=${java.library.path}</argLine>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.twosix.race</groupId>
+      <artifactId>racesdk-java-shims</artifactId>
+      <version>1</version>
+      <scope>system</scope>
+      <systemPath>${racesdk.java.shims.jar}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>3.6.28</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,3 @@
+ComponentActionManagerTestFixture_test_actionThreadLogic_stop_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}
+MockComponentManagerInternal::getState: 
+ComponentActionManagerTestFixture_test_actionThreadLogic_stop_Test::TestBody:  with actionManager.testActionThreadLogic(1)=1

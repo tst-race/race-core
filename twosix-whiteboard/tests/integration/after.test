@@ -1,0 +1,131 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}"/helpers.sh
+
+start_containers
+
+# TODO health check?
+sleep 2
+
+echo "get after for non-existent category" | tee >(cat >&2)
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/1"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/inf"
+
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/0"
+
+echo "posting" | tee >(cat >&2)
+TIME1=$(date +%s.%6N)
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"1" }' | jq -c  'del(.timestamp)'
+
+TIME2=$(date +%s.%6N)
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"2" }' | jq -c  'del(.timestamp)'
+
+TIME3=$(date +%s.%6N)
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/bar" --header 'Content-Type: application/json' --data-raw '{ "data":"3" }' | jq -c  'del(.timestamp)'
+
+TIME4=$(date +%s.%6N)
+
+echo "get after for existent category" | tee >(cat >&2)
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME1}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME2}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME3}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME4}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/inf"
+
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME1}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME2}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME3}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME4}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/inf"
+
+
+echo "posting 2" | tee >(cat >&2)
+TIME5=$(date +%s.%6N)
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"1" }' | jq -c  'del(.timestamp)'
+
+TIME6=$(date +%s.%6N)
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"2" }' | jq -c  'del(.timestamp)'
+
+TIME7=$(date +%s.%6N)
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/bar" --header 'Content-Type: application/json' --data-raw '{ "data":"3" }' | jq -c  'del(.timestamp)'
+
+TIME8=$(date +%s.%6N)
+
+echo "get after for existent category (2)" | tee >(cat >&2)
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME1}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME2}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME3}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME4}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME5}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME6}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME7}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME8}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/inf"
+
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME1}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME2}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME3}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME4}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME5}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME6}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME7}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME8}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/inf"
+
+echo "posting 3" | tee >(cat >&2)
+TIME9=$(date +%s.%6N)
+
+POST_TIME1=$(curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"1" }' | jq -c  '.timestamp' | sed s/\"//g)
+
+TIME10=$(date +%s.%6N)
+
+POST_TIME2=$(curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"2" }' | jq -c  '.timestamp' | sed s/\"//g)
+
+TIME11=$(date +%s.%6N)
+
+POST_TIME3=$(curl --fail --silent --show-error --request POST "localhost:5000/post/bar" --header 'Content-Type: application/json' --data-raw '{ "data":"3" }' | jq -c  '.timestamp' | sed s/\"//g)
+
+TIME12=$(date +%s.%6N)
+
+echo "after for timestamps returned by post" | tee >(cat >&2)
+
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME9}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${POST_TIME1}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME10}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${POST_TIME2}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME11}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${POST_TIME3}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/${TIME12}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/foo/inf"
+
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/0"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME9}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${POST_TIME1}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME10}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${POST_TIME2}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME11}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${POST_TIME3}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/${TIME12}"
+curl  --write-out "\n" --fail --silent --show-error --request GET "localhost:5000/after/bar/inf"
+
+(( $(echo "${TIME9} < ${POST_TIME1}"  | bc -l) )) && echo "timestamp matches expected" || echo "timestamp occurs before time expected"
+(( $(echo "${POST_TIME1} < ${TIME10}" | bc -l) )) && echo "timestamp matches expected" || echo "timestamp occurs after time expected"
+(( $(echo "${TIME10} < ${POST_TIME2}" | bc -l) )) && echo "timestamp matches expected" || echo "timestamp occurs before time expected"
+(( $(echo "${POST_TIME2} < ${TIME11}" | bc -l) )) && echo "timestamp matches expected" || echo "timestamp occurs after time expected"
+(( $(echo "${TIME11} < ${POST_TIME3}" | bc -l) )) && echo "timestamp matches expected" || echo "timestamp occurs before time expected"
+(( $(echo "${POST_TIME3} < ${TIME12}" | bc -l) )) && echo "timestamp matches expected" || echo "timestamp occurs after time expected"
+
+stop_containers	

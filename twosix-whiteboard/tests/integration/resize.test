@@ -1,0 +1,213 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}"/helpers.sh
+
+start_containers
+
+# TODO health check?
+sleep 2
+curl --fail --silent --show-error --request GET "localhost:5000/resize/0" | jq -c  'del(.timestamp)'
+
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"1" }' | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"2" }' | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request POST "localhost:5000/post/bar" --header 'Content-Type: application/json' --data-raw '{ "data":"3" }' | jq -c  'del(.timestamp)'
+
+curl --fail --silent --show-error --request GET "localhost:5000/resize/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/resize/0" | jq -c  'del(.timestamp)'
+
+
+echo "get latest index for non-existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/latest/foo" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/latest/bar" | jq -c  'del(.timestamp)'
+
+echo "get index for non-existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1" | jq -c  'del(.timestamp)'
+
+echo "get range for non-existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/-2" | jq -c  'del(.timestamp)'
+
+echo "post to previously non-existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"0" }' | jq -c  'del(.timestamp)'
+
+echo "get latest index for existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/latest/foo" | jq -c  'del(.timestamp)'
+
+echo "get latest index for non-existent category when another category exists" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/latest/bar" | jq -c  'del(.timestamp)'
+
+echo "get index for existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1" | jq -c  'del(.timestamp)'
+
+echo "get index for non-existent category when another category exists" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1" | jq -c  'del(.timestamp)'
+
+echo "get non-existent range for existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/3" | jq -c  'del(.timestamp)'
+
+echo "get existent range for existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/-1" | jq -c  'del(.timestamp)'
+
+echo "get range for non-existent category when another category exists" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/-1" | jq -c  'del(.timestamp)'
+
+echo "post to existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request POST "localhost:5000/post/foo" --header 'Content-Type: application/json' --data-raw '{ "data":"1" }' | jq -c  'del(.timestamp)'
+
+echo "get latest index for existent category (2)" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/latest/foo" | jq -c  'del(.timestamp)'
+
+echo "get index for existent category (2)" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1" | jq -c  'del(.timestamp)'
+
+echo "get non-existent range for existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/-3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/-3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/-3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/-3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/-3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/4/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/4/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/4/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/4/-1" | jq -c  'del(.timestamp)'
+
+echo "get existent range for existent category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2/-2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1/-1" | jq -c  'del(.timestamp)'
+
+echo "post to second category" | tee >(cat >&2)
+curl --fail --silent --show-error --request POST "localhost:5000/post/bar" --header 'Content-Type: application/json' --data-raw '{ "data":"bar0" }' | jq -c  'del(.timestamp)'
+
+echo "get latest index for first category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/latest/foo" | jq -c  'del(.timestamp)'
+
+echo "get index for first category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/3" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/4" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/foo/-1" | jq -c  'del(.timestamp)'
+
+echo "get latest index for second category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/latest/bar" | jq -c  'del(.timestamp)'
+
+echo "get index for second category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1" | jq -c  'del(.timestamp)'
+
+echo "get non-existent ranges for second category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/0" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/2/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/0" | jq -c  'del(.timestamp)'
+
+echo "get existent ranges for second category" | tee >(cat >&2)
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/0/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/1/-1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/1" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/2" | jq -c  'del(.timestamp)'
+curl --fail --silent --show-error --request GET "localhost:5000/get/bar/-1/-1" | jq -c  'del(.timestamp)'
+
+stop_containers

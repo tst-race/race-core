@@ -1,0 +1,55 @@
+{
+    "bootstrap": true,
+    "channelGid": "twoSixBootstrapFileCpp",
+    "connectionType": "CT_LOCAL",
+    "creatorExpected": {
+      "send": {
+        "bandwidth_bps": 1000,
+        "latency_ms": 2147483648,
+        "loss": -1.0
+      },
+      "receive": {
+        "bandwidth_bps": 1000,
+        "latency_ms": 2147483647,
+        "loss": -1.0
+      }
+    },
+    "description": "Implementation of the Two Six Labs Bootstrap communications utilizing files",
+    "duration_s": -1,
+    "linkDirection": "LD_BIDI",
+    "loaderExpected": {
+      "send": {
+        "bandwidth_bps": 1000,
+        "latency_ms": 2147483648,
+        "loss": -1.0
+      },
+      "receive": {
+        "bandwidth_bps": 1000,
+        "latency_ms": 2147483648,
+        "loss": -1.0
+      }
+    },
+    "mtu": -1,
+    "multiAddressable": false,
+    "period_s": -1,
+    "reliable": false,
+    "isFlushable": false,
+    "sendType": "ST_STORED_ASYNC",
+    "supported_hints": [],
+    "transmissionType": "TT_UNICAST",
+    "maxLinks": 2000,
+    "creatorsPerLoader": -1,
+    "loadersPerCreator": -1,
+    "roles": [
+      {
+        "roleName": "default",
+        "mechanicalTags": [],
+        "behavioralTags": [],
+        "linkSide": "LS_BOTH"
+      }
+    ],
+    "maxSendsPerInterval": -1,
+    "secondsPerInterval": -1,
+    "intervalEndTime": 0,
+    "sendsRemainingInInterval": -1
+}

@@ -1,0 +1,20 @@
+BootstrapInstanceManagerTestFixture_handleLinkCreated_Test::getNM: 
+MockNMWrapper::prepareToBootstrap:  with handle=0, linkId=link-id, configPath=bootstrap-files/, deviceInfo={linux, x86_64, client}
+, timeout=-2147483648
+BootstrapInstanceManagerTestFixture_handleLinkCreated_Test::TestBody:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "link-id",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 2
+}
+

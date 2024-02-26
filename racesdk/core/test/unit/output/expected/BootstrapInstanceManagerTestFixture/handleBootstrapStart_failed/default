@@ -1,0 +1,37 @@
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_failed_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_failed_Test::getNM: 
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_failed_Test::createBootstrapLink:  with createdLinkHandle=1, passphrase=passphrase, bootstrapChannelId=bootstrapChannel
+MockBootstrapManager::removePendingBootstrap:  with failedBootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 1,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 6
+}
+
+BootstrapInstanceManagerTestFixture_handleBootstrapStart_failed_Test::TestBody:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bootstrapChannel",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 1,
+    "deviceInfo": {
+        "arch": "x86_64",
+        "node_type": "client",
+        "platform": "linux"
+    },
+    "passphrase": "passphrase",
+    "prepareBootstrapHandle": 0,
+    "state": 6
+}
+

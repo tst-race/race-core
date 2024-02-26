@@ -1,0 +1,4 @@
+ComponentActionManagerTestFixture_test_updateGlobalTimeline_add_new_actions_after_end_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}
+MockComponentManagerInternal::getTransport: 
+MockTransportComponentWrapper::getActionParams:  with action=Action{ id:0}
+ComponentActionManagerTestFixture_test_updateGlobalTimeline_add_new_actions_after_end_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: [ActionInfo{action: Action{ id:0}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}, ]}

@@ -1,0 +1,8 @@
+black~=20.8b1
+mock==2.0.0
+pylint~=2.6.0
+pytest-cov==2.6.1
+pytest-html==2.1.1
+pytest==5.3.2
+pytest_metadata==1.11.0
+requests-mock==1.7.0

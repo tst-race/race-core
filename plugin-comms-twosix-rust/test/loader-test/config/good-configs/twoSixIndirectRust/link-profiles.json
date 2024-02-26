@@ -1,0 +1,48 @@
+{
+    "links": [
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ],
+            "profile": "{\"port\": 4000, \"hostname\": \"whiteboard-sri\", \"multicast\": true, \"service_name\": \"twosix-whiteboard\"}",
+            "properties": {
+                "type": "send",
+                "boadcast": true
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ]
+        },
+        {
+            "connectedTo": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ],
+            "profile": "{\"port\": 4000, \"hostname\": \"whiteboard-sri\", \"multicast\": true, \"service_name\": \"twosix-whiteboard\", \"frequency\": 10}",
+            "properties": {
+                "type": "receive",
+                "boadcast": true
+            },
+            "utilizedBy": [
+                "race-server-1",
+                "race-server-2",
+                "race-client-1",
+                "race-client-2"
+            ]
+        }
+    ],
+    "settings": {
+        "whiteboard": {
+            "hostname": "twosix-whiteboard",
+            "port": 5000
+        }
+    }
+}

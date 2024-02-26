@@ -1,0 +1,36 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}"/helpers.sh
+
+start_containers
+
+# 10 megabyte string
+LONG_STRING=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 10M)
+
+# TODO health check?
+sleep 2
+
+echo "post huge strings" | tee >(cat >&2)
+(
+for (( i = 0; i < 100; i++ )); do
+    (
+    curl --fail --silent --show-error --request POST localhost:5000/post/long --header 'Content-Type: application/json' -d @- <<CURL_DATA | jq -c  'del(.timestamp)'
+{ "data": "$LONG_STRING" }
+CURL_DATA
+    ) &
+done
+) | sort
+
+wait
+
+echo "get index huge string (shouldn't exist becaue resizing)" | tee >(cat >&2)
+curl --write-out "\n" --silent --show-error --request GET "localhost:5000/get/long/0" | wc
+
+echo "get index huge string" | tee >(cat >&2)
+curl --write-out "\n" --silent --show-error --request GET "localhost:5000/get/long/-1" | wc
+
+echo "get range huge strings" | tee >(cat >&2)
+curl --write-out "\n" --silent --show-error --request GET "localhost:5000/get/long/0/-1" | wc
+
+stop_containers

@@ -1,0 +1,9 @@
+MockComponentPlugin::transportPlugin.createTransport:  with name=transport_id, roleName=some role name, pluginConfig={, , , , }
+
+MockComponentPlugin::usermodelPlugin.createUserModel:  with name=usermodel_id, roleName=some role name, pluginConfig={, , , , }
+
+MockComponentPlugin::encodingPlugin.createEncoding:  with name=encoder, roleName=some role name, pluginConfig={, , , , }
+
+MockRaceSdkComms::requestCommonUserInput:  with key=key
+MockRaceSdkComms::onChannelStatusChanged:  with handle=0, channelGid=composition_id, status=CHANNEL_ENABLED, properties=<ChannelProperties>
+, timeout=-2147483648

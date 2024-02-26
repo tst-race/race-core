@@ -1,0 +1,20 @@
+version: '3.7'
+
+networks:
+  rib-overlay-network:
+    external: true
+
+services:
+  twosix-file-server:
+    container_name: twosix-file-server
+    hostname: twosix-file-server
+    image: ghcr.io/tst-race/race-core/twosix-file-server:main
+    init: true
+    networks:
+    - rib-overlay-network
+
+x-logging:
+  driver: json-file
+  options:
+    max-file: '5'
+    max-size: 1m

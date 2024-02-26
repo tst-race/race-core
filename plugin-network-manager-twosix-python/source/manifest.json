@@ -1,0 +1,22 @@
+{
+    "plugins": [
+        {
+            "file_path": "PluginNMTwoSixPython",
+            "plugin_type": "network-manager",
+            "file_type": "python",
+            "node_type": "client",
+            "python_module": "PluginNMTwoSixPython.PluginNMTwoSixClientPy",
+            "python_class": "PluginNMTwoSixClientPy",
+            "config_path": "PluginNMTwoSixPython/"
+        },
+        {
+            "file_path": "PluginNMTwoSixPython",
+            "plugin_type": "network-manager",
+            "file_type": "python",
+            "node_type": "server",
+            "python_module": "PluginNMTwoSixPython.PluginNMTwoSixServerPy",
+            "python_class": "PluginNMTwoSixServerPy",
+            "config_path": "PluginNMTwoSixPython/"
+        }
+    ]
+}

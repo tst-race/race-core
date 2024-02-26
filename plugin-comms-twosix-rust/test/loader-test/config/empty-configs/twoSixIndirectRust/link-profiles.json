@@ -1,0 +1,9 @@
+{
+    "links": [],
+    "settings": {
+        "whiteboard": {
+            "hostname": "twosix-whiteboard",
+            "port": 5000
+        }
+    }
+}

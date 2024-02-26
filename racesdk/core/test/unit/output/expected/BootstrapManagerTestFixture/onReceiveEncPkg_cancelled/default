@@ -1,0 +1,18 @@
+MockBootstrapInstanceManager::handleBootstrapPkgReceived:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "bsChannelId",
+    "bootstrapConnection": "conn id",
+    "bootstrapLink": "link id",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "",
+        "node_type": "",
+        "platform": ""
+    },
+    "passphrase": "",
+    "prepareBootstrapHandle": 0,
+    "state": 0
+}
+, pkg=<EncPkg>
+, timeout=0

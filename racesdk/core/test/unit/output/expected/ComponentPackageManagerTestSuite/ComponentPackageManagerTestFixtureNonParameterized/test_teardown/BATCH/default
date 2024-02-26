@@ -1,0 +1,31 @@
+ComponentPackageManagerTestFixtureNonParameterized_test_teardown_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{
+        3:EncodingInfo{ params: EncodingParameters{ linkId: , type: , encodePackage: 0, json: }, pendingEncodeHandle: 3, state: ENCODING }, 
+    }
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 5, action: 42, state: UNENCODED, offset: 0, len: 19}, 
+        1:PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 20}, 
+    }
+}
+ComponentPackageManagerTestFixtureNonParameterized_test_teardown_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:42}, linkId: , encoding size: 1, fragments: [PackageFragmentInfo{package: 5, action: 42, state: UNENCODED, offset: 0, len: 19}, PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 20}, ], toBeRemoved: 1}, 
+    ]
+    packageQueue: []
+}
+ComponentPackageManagerTestFixtureNonParameterized_test_teardown_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixtureNonParameterized_test_teardown_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:42}, linkId: , encoding size: 1, fragments: [PackageFragmentInfo{package: 5, action: 42, state: UNENCODED, offset: 0, len: 19}, PackageFragmentInfo{package: 7, action: 42, state: UNENCODED, offset: 0, len: 20}, ], toBeRemoved: 1}, 
+    ]
+    packageQueue: []
+}

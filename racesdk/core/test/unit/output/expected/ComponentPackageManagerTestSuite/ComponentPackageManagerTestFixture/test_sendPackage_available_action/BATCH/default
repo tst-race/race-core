@@ -1,0 +1,32 @@
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {}
+}
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: , encoding size: 1, fragments: [], toBeRemoved: 0}, 
+    ]
+    packageQueue: []
+}
+MockComponentManagerInternal::getConnection:  with connId=mockConnectionId
+MockComponentManagerInternal::getLink:  with linkId=mockLinkId
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_Test::TestBody:  with packageManager=PackageManager{
+    pendingEncodings:{}
+    nextEncodingHandle: 0
+    fragments: {
+        0:PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, 
+    }
+}
+ComponentPackageManagerTestFixture_test_sendPackage_available_action_Test::TestBody:  with mockComponentManager.mockLink=Link{
+    linkId: mockLinkId
+    connections: []
+    actionQueue: [
+        ActionInfo{action: Action{ id:3}, linkId: mockLinkId, encoding size: 1, fragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, ], toBeRemoved: 0}, 
+    ]
+    packageQueue: [
+        PackageInfo{ linkId: mockLinkId, sdkHandle: 7, pendingEncodeHandle: 0, packageFragments: [PackageFragmentInfo{package: 7, action: 3, state: UNENCODED, offset: 0, len: 19}, ] }, 
+    ]
+}

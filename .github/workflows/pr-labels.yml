@@ -1,0 +1,18 @@
+name: Label Pull Requests
+
+on:
+  - pull_request
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: srvaroa/labeler@v1.5.0
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          config_path: .github/labeler_config.yml

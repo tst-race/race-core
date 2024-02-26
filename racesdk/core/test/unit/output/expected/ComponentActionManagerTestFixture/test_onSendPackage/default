@@ -1,0 +1,11 @@
+ComponentActionManagerTestFixture_test_onSendPackage_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: inf, nextEncodeTime: inf, lastEncodeTime: 0.0000000000000000, actions: []}
+MockComponentManagerInternal::getConnection:  with connId=mockConnId
+MockComponentManagerInternal::getUserModel: 
+ComponentActionManagerTestFixture_test_onSendPackage_Test::onSendPackage:  with linkId=mockLinkId, bytes=25
+MockComponentManagerInternal::getTransport: 
+MockTransportComponentWrapper::getActionParams:  with action=Action{ id:1}
+MockComponentManagerInternal::getTransport: 
+MockTransportComponentWrapper::getActionParams:  with action=Action{ id:2}
+MockComponentManagerInternal::getLinks: 
+MockComponentManagerInternal::updatedActions: 
+ComponentActionManagerTestFixture_test_onSendPackage_Test::TestBody:  with actionManager=ActionManager{maxEncodingTime: 0.1000000000000000, nextFetchTime: 0.0000000000000000, nextActionTime: 2.1000000000000001, nextEncodeTime: 2.0000000000000000, lastEncodeTime: 0.0000000000000000, actions: [ActionInfo{action: Action{ id:1}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}, ActionInfo{action: Action{ id:2}, linkId: , encoding size: 0, fragments: [], toBeRemoved: 0}, ]}

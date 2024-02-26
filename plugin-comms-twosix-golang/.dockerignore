@@ -1,0 +1,5 @@
+*
+!source/CMakeLists.txt
+!source/*.cpp
+!source/*.go
+!scripts/start-performer-services.sh

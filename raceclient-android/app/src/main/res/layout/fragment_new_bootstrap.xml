@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.bootstrap.NewBootstrapFragment" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bootstrap_passphrase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/bootstrap_passphrase_label"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/bootstrap_channel_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/bootstrap_channel_label" />
+
+            <RadioGroup
+                android:id="@+id/bootstrap_channel_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/advanced_options_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="false"
+                    android:gravity="center_vertical"
+                    android:labelFor="@id/expand_button"
+                    android:minHeight="48dp"
+                    android:text="@string/bootstrap_advanced_options_label" />
+
+                <ImageButton
+                    android:id="@+id/expand_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_expand_more" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/advanced_options"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/platform_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:labelFor="@id/platform_spinner"
+                    android:minHeight="48dp"
+                    android:text="@string/bootstrap_platform_label" />
+
+                <Spinner
+                    android:id="@+id/platform_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@id/platform_label"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/arch_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/platform_spinner"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:labelFor="@id/arch_spinner"
+                    android:minHeight="48dp"
+                    android:text="@string/bootstrap_arch_label" />
+
+                <Spinner
+                    android:id="@+id/arch_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/platform_spinner"
+                    android:layout_toEndOf="@id/arch_label"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/node_type_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arch_spinner"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:labelFor="@id/node_type_spinner"
+                    android:minHeight="48dp"
+                    android:text="@string/bootstrap_node_type_label" />
+
+                <Spinner
+                    android:id="@+id/node_type_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arch_spinner"
+                    android:layout_toEndOf="@id/node_type_label"
+                    android:minHeight="48dp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/prepare_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bootstrap_button_text"
+                android:theme="@style/PrimaryButton" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,121 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+get latest index for non-existent category
+{"latest":0}
+{"latest":0}
+get index for non-existent category
+get range for non-existent category
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+post to previously non-existent category
+{"index":0}
+get latest index for existent category
+{"latest":1}
+get latest index for non-existent category when another category exists
+{"latest":0}
+get index for existent category
+{"data":"0"}
+{"data":"0"}
+get index for non-existent category when another category exists
+get range for existent category
+{"data":["0"],"length":1}
+{"data":["0"],"length":1}
+{"data":["0"],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":["0"],"length":1}
+{"data":["0"],"length":1}
+{"data":["0"],"length":1}
+get range for non-existent category when another category exists
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+{"data":[],"length":0}
+post to existent category
+{"index":1}
+get latest index for existent category (2)
+{"latest":2}
+get index for existent category (2)
+{"data":"0"}
+{"data":"1"}
+{"data":"1"}
+get range for existent category (2)
+{"data":["0"],"length":2}
+{"data":["0","1"],"length":2}
+{"data":["0","1"],"length":2}
+{"data":["0","1"],"length":2}
+{"data":[],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+post to second category
+{"index":0}
+get latest index for first category
+{"latest":2}
+get index for first category
+{"data":"0"}
+{"data":"1"}
+{"data":"1"}
+get range for first category
+{"data":["0"],"length":2}
+{"data":["0","1"],"length":2}
+{"data":["0","1"],"length":2}
+{"data":["0","1"],"length":2}
+{"data":[],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":[],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+{"data":["1"],"length":2}
+get latest index for second category
+{"latest":1}
+get index for second category
+{"data":"bar0"}
+{"data":"bar0"}
+get range for second category
+{"data":["bar0"],"length":1}
+{"data":["bar0"],"length":1}
+{"data":["bar0"],"length":1}
+{"data":["bar0"],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":[],"length":1}
+{"data":["bar0"],"length":1}
+{"data":["bar0"],"length":1}
+{"data":["bar0"],"length":1}
+{"data":["bar0"],"length":1}
+latest bad urls
+get index bad urls
+get range bad urls
+post bad urls
+stop containers

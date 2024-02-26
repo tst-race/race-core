@@ -1,0 +1,65 @@
+version: 1
+labels:
+  # Size labels
+  - label: "size: xsmall"
+    size:
+      below: 10
+      exclude-files:
+      - "package-lock.json"
+  - label: "size: small"
+    size:
+      above: 9
+      below: 100
+      exclude-files:
+        - "package-lock.json"
+  - label: "size: medium"
+    size:
+      above: 99
+      below: 500
+      exclude-files:
+        - "package-lock.json"
+  - label: "size: large"
+    size:
+      above: 499
+      below: 1000
+      exclude-files:
+        - "package-lock.json"
+  - label: "size: xlarge"
+    size:
+      above: 999
+      exclude-files:
+        - "package-lock.json"
+  # Content/module labels
+  - label: "module: android"
+    files:
+      - "raceclient-android/.*"
+  - label: "module: apps"
+    files:
+      - "raceclient-android/.*"
+      - "racetestapp-linux/.*"
+      - "race-node-daemon/.*"
+      - "race-registry/.*"
+  - label: "module: build"
+    files:
+      - "build.sh"
+      - ".*CMake.*"
+      - "create-kits.py"
+      - "docker_run.sh"
+      - "merge-kits.py"
+      - "m1-build/.*"
+      - "race-cmake-modules/.*"
+  - label: "module: ci"
+    files:
+      - ".github/.*"
+  - label: "module: documentation"
+    files:
+      - "*.md"
+  - label: "module: exemplars"
+    files:
+      - "plugin-.*"
+      - "race-python-utils/.*"
+      - "twosix-file-server/.*"
+      - "twosix-whiteboard/.*"
+  - label: "module: sdk"
+    files:
+      - "racesdk/.*"

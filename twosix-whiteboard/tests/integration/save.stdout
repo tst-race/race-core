@@ -1,0 +1,33 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+save empty db
+db size matches expected
+save long string
+{"index":0}
+db size matches expected
+resize to get rid of long string
+{"mem_usage":0}
+db size matches expected
+save post
+{"index":0}
+db size matches expected
+db size matches expected
+stop containers
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+get post after restarting containers
+{"data":"0"}
+post again
+{"index":1}
+save post on shutdown
+stop containers
+db size matches expected
+db size matches expected
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+get post after restarting containers
+{"data":"1"}
+stop containers

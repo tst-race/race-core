@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">RACE</string>
+    <!-- Activity -->
+    <string name="activity_welcome">Welcome to RACE</string>
+    <!-- Service -->
+    <string name="service_race_is_running">RACE is running</string>
+    <string name="service_stop">Stop RACE</string>
+    <string name="service_unread_messages">You have unread messages from %1$s</string>
+    <string name="service_input_required">Input is required</string>
+    <!-- Splash -->
+    <string name="splash_resilient"><font color="#ffffff">R</font><font color="#aaaaaa">esilient</font></string>
+    <string name="splash_anonymous"><font color="#ffffff">A</font><font color="#aaaaaa">nonymous</font></string>
+    <string name="splash_communication"><font color="#ffffff">C</font><font color="#aaaaaa">ommunication</font></string>
+    <string name="splash_for"><font color="#aaaaaa">for</font></string>
+    <string name="splash_everyone"><font color="#ffffff">E</font><font color="#aaaaaa">veryone</font></string>
+    <!-- Setup -->
+    <string name="setup_title">Setting up RACE...</string>
+    <string name="setup_permissions">Permissions granted</string>
+    <string name="setup_passphrase">Passphrase entered</string>
+    <string name="setup_assets">Assets extracted</string>
+    <string name="setup_plugins">Has plugins</string>
+    <string name="setup_configs">Has configs</string>
+    <string name="setup_persona">User persona set</string>
+    <string name="setup_channels">Enabled channels set</string>
+    <string name="setup_permissions_rationale_title">Permission is required</string>
+    <string name="setup_permissions_rationale_retry">RACE requires permission to %1$s. Click RETRY to grant the permission.</string>
+    <string name="setup_permissions_rationale_settings">RACE is not functional without permission to %1$s. Click SETTINGS to manually grant the permission.</string>
+    <string name="setup_alert_retry">RETRY</string>
+    <string name="setup_alert_cancel">EXIT</string>
+    <string name="setup_alert_settings">SETTINGS</string>
+    <string name="setup_alert_select">SELECT</string>
+    <string name="setup_alert_none">NONE</string>
+    <string name="setup_asset_python_bindings">Extracting Python plugin bindings...</string>
+    <string name="setup_asset_python_packages">Extracting Python packages...</string>
+    <string name="setup_asset_extraction_failed">An error occurred extracting required assets</string>
+    <string name="setup_plugins_prompt_title">Plugin artifacts are required</string>
+    <string name="setup_plugins_prompt">RACE plugins are required in order to function. Select the location of the plugin artifacts.</string>
+    <string name="setup_plugins_copy">Copying plugin artifacts...</string>
+    <string name="setup_plugins_failed">An error occurred copying plugin artifacts</string>
+    <string name="setup_configs_prompt_title">RACE configs are required</string>
+    <string name="setup_configs_prompt">RACE bootstrap configs are required in order to function. Select the location of the configs archive file.</string>
+    <string name="setup_configs_copy">Copying configs...</string>
+    <string name="setup_configs_failed">An error occurred copying configs</string>
+    <string name="setup_persona_prompt_title">What is your RACE persona?</string>
+    <string name="setup_new_passphrase_prompt_title">Set a RACE passphrase.</string>
+    <string name="setup_passphrase_prompt_title">What is your RACE passphrase?</string>
+    <string name="setup_retry_passphrase_prompt_title">Invalid passphrase. Try again.</string>
+    <string name="setup_persona_hint">persona</string>
+    <string name="setup_passphrase_hint">passphrase</string>
+    <string name="setup_persona_failed">An error occurred obtaining the persona</string>
+    <string name="setup_initializing">Initializing RACE...</string>
+    <!-- Conversations -->
+    <string name="conversations_title">RACE: %1$s</string>
+    <string name="conversations_new_convo_title">New conversation</string>
+    <string name="conversations_new_convo_persona_hint">destination persona</string>
+    <string name="conversations_new_convo_add">ADD</string>
+    <!-- Channel selection -->
+    <string name="apply_channel_selection">Use Selected Channels</string>
+    <string name="channels_menu_item">Enabled Channels...</string>
+    <string name="channels_list_title">Enabled Channels</string>
+    <string name="select_channels_title">Select Channels to Enable</string>
+    <!-- New Bootstrap -->
+    <string name="new_bootstrap_menu_item">Bootstrap Another Device...</string>
+    <string name="new_bootstrap_title">Bootstrap Another Device</string>
+    <string name="bootstrap_passphrase_label">Passphrase</string>
+    <string name="bootstrap_channel_label">Bootstrap Channel</string>
+    <string name="bootstrap_advanced_options_label">Advanced Options</string>
+    <string name="bootstrap_platform_label">Platform</string>
+    <string name="bootstrap_failed_instruction">Please instruct remote user to remove bootstrap files from Downloads folder (if downloaded) before retrying.\n\nFor example using the Files app:\n remove contents of the Downloads/race/ folder (e.g. race/artifacts, race/race, and race/configs.tar.gz).</string>
+    <string-array name="bootstrap_platforms">
+        <item>android</item>
+        <item>linux</item>
+    </string-array>
+    <string name="bootstrap_arch_label">Architecture</string>
+    <string-array name="bootstrap_architectures">
+        <item>arm64-v8a</item>
+        <item>x86_64</item>
+    </string-array>
+    <string name="bootstrap_node_type_label">Node Type</string>
+    <string-array name="bootstrap_node_types">
+        <item>client</item>
+        <item>server</item>
+    </string-array>
+    <string name="bootstrap_button_text">Start Bootstrap</string>
+</resources>

@@ -1,0 +1,10 @@
+{
+    "version": 4,
+    "include": [
+        "race-cmake-modules/presets/linux_x86_64.json",
+        "race-cmake-modules/presets/linux_arm64-v8a.json",
+        "race-cmake-modules/presets/android_x86_64.json",
+        "race-cmake-modules/presets/android_arm64-v8a.json",
+        "race-cmake-modules/presets/android_arm64-v8a_M1.json"
+    ]
+}

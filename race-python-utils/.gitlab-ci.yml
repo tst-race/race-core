@@ -1,0 +1,67 @@
+image: python:3.8.2 # Should match version of Python used by RiB
+
+stages:
+  - style
+  - test
+  - build
+
+
+####################################################################################################
+# style
+####################################################################################################
+
+
+# Check style of package with Pylint
+style:pylint:
+  stage: style
+  tags:
+    - race-aws-runner
+  script:
+    - (yes | pip3 install -r race_python_utils/requirements.txt || true)
+    - (yes | pip3 install -r race_python_utils/requirements_test.txt || true)
+    - make pylint
+  timeout: 10m
+  needs: []
+
+
+# Check style of package with Black
+style:black:
+  stage: style
+  tags:
+    - race-aws-runner
+  script:
+    - (yes | pip3 install -r race_python_utils/requirements.txt || true)
+    - (yes | pip3 install -r race_python_utils/requirements_test.txt || true)
+    - make black_check
+  timeout: 10m
+  needs: []
+
+
+####################################################################################################
+# test
+####################################################################################################
+
+
+test-unit:pytest-package:
+  stage: test
+  tags:
+    - race-aws-runner
+  script:
+    - make test
+  timeout: 30m
+  needs: []
+
+
+####################################################################################################
+# build
+####################################################################################################
+
+
+build:race-python-utils:
+  stage: build
+  tags:
+    - race-aws-runner
+  script:
+    - make build_package
+  timeout: 30m
+  needs: [ "test-unit:pytest-package" ]

@@ -1,0 +1,46 @@
+ComponentManagerTestFixture_test_request_plugin_user_input_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: WAITING_FOR_COMPONENTS
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {encoder: <EncodingComponentWrapper>, }
+	 transport: <TransportComponentWrapper>
+	 usermodel: <UserModelComponentWrapper>
+	 wrappers: [<Sdk Wrapper for transport_id>, <Sdk Wrapper for usermodel_id>, <Sdk Wrapper for encoder>, ]
+	 componentStates: {encoder: COMPONENT_STATE_INIT, transport_id: COMPONENT_STATE_INIT, usermodel_id: COMPONENT_STATE_INIT, }
+	 activateHandle: 42
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}
+ComponentManagerTestFixture_test_request_plugin_user_input_Test::requestPluginUserInput response:  with response={ status: CM_OK, handle: 5 }
+ComponentManagerTestFixture_test_request_plugin_user_input_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: WAITING_FOR_COMPONENTS
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {encoder: <EncodingComponentWrapper>, }
+	 transport: <TransportComponentWrapper>
+	 usermodel: <UserModelComponentWrapper>
+	 wrappers: [<Sdk Wrapper for transport_id>, <Sdk Wrapper for usermodel_id>, <Sdk Wrapper for encoder>, ]
+	 componentStates: {encoder: COMPONENT_STATE_INIT, transport_id: COMPONENT_STATE_INIT, usermodel_id: COMPONENT_STATE_INIT, }
+	 activateHandle: 42
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {0: Pair<5, transport_id>, }
+}}
+ComponentManagerTestFixture_test_request_plugin_user_input_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: WAITING_FOR_COMPONENTS
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {encoder: <EncodingComponentWrapper>, }
+	 transport: <TransportComponentWrapper>
+	 usermodel: <UserModelComponentWrapper>
+	 wrappers: [<Sdk Wrapper for transport_id>, <Sdk Wrapper for usermodel_id>, <Sdk Wrapper for encoder>, ]
+	 componentStates: {encoder: COMPONENT_STATE_INIT, transport_id: COMPONENT_STATE_INIT, usermodel_id: COMPONENT_STATE_INIT, }
+	 activateHandle: 42
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}

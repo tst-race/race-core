@@ -1,0 +1,17 @@
+MockBootstrapInstanceManager::handleNMFailed:  with bootstrap=BootstrapInfo{
+    "bootstrapChannelId": "",
+    "bootstrapConnection": "",
+    "bootstrapLink": "",
+    "commsPlugins": [],
+    "connectionHandle": 0,
+    "createdLinkHandle": 0,
+    "deviceInfo": {
+        "arch": "",
+        "node_type": "",
+        "platform": ""
+    },
+    "passphrase": "",
+    "prepareBootstrapHandle": 1,
+    "state": 0
+}
+

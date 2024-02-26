@@ -1,0 +1,2 @@
+MockBootstrapManager::prepareToBootstrap:  with deviceInfo={linux, x86_64, client}
+, passphrase=password1, bootstrapChannelId=MockComms-0/channel2

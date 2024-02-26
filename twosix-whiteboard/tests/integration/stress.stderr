@@ -1,0 +1,8 @@
+building docker image in case it's not up-to-date
+create docker network if in case it doesn't exist
+start containers
+post huge strings
+get index huge string (shouldn't exist becaue resizing)
+get index huge string
+get range huge strings
+stop containers

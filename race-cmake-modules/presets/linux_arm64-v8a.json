@@ -1,0 +1,56 @@
+{
+    "version": 4,
+    "include": ["common.json"],
+    "configurePresets": [
+        {
+            "name": "LINUX_arm64-v8a",
+            "displayName": "Linux arm64-v8a Config",
+            "description": "Linux arm64-v8a build using clang",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/LINUX_arm64-v8a",
+            "toolchainFile": "${fileDir}/../toolchains/linux-arm64-v8a.toolchain.cmake",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-linux-arm64-v8a",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_STAGING_PREFIX": "${sourceDir}/racesdk/package/LINUX_arm64-v8a",
+                "TARGET_ARCHITECTURE": "LINUX_arm64-v8a"
+            }
+        },
+        {
+            "name": "coverage_arm64-v8a",
+            "displayName": "Linux arm64-v8a Coverage Config",
+            "description": "Build with coverage profiling enabled",
+            "inherits": "LINUX_arm64-v8a",
+            "binaryDir": "${sourceDir}/build/LINUX_arm64-v8a-coverage",
+            "cacheVariables": {
+                "BUILD_VERSION": "dev-linux-arm64-v8a-coverage",
+                "ENABLE_CODE_COVERAGE": "ON",
+                "ENABLE_CODE_LINTING": "OFF"
+            }
+        },
+        {
+            "name": "LINUX_arm64-v8a-cross-compile",
+            "displayName": "Linux arm64-v8a Cross-compilation Config",
+            "description": "Linux arm64-v8a cross-compiled build using clang",
+            "inherits": "LINUX_arm64-v8a",
+            "cacheVariables": {
+                "CMAKE_CROSSCOMPILING": "TRUE",
+                "ENABLE_CODE_LINTING": "OFF"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "LINUX_arm64-v8a",
+            "configurePreset": "LINUX_arm64-v8a"
+        },
+        {
+            "name": "coverage_arm64-v8a",
+            "configurePreset": "coverage_arm64-v8a"
+        },
+        {
+            "name": "LINUX_arm64-v8a-cross-compile",
+            "configurePreset": "LINUX_arm64-v8a-cross-compile"
+        }
+    ]
+}

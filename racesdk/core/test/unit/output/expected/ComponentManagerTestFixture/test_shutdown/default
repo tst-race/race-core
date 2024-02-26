@@ -1,0 +1,30 @@
+ComponentManagerTestFixture_test_shutdown_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: INITIALIZING
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {}
+	 transport: nullopt
+	 usermodel: nullopt
+	 wrappers: []
+	 componentStates: {}
+	 activateHandle: 0
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}
+ComponentManagerTestFixture_test_shutdown_Test::TestBody:  with manager=ComponentManager{ ComponentManagerInternal {
+	 state: SHUTTING_DOWN
+	 composition: Composite comms: composition_id, transport: transport_id, usermodel: usermodel_id, encodings: [["encoding_id"]], from plugins {}
+	 encodings: {}
+	 transport: nullopt
+	 usermodel: nullopt
+	 wrappers: []
+	 componentStates: {}
+	 activateHandle: 0
+	 pendingEncodings: {}
+	 actions: []
+	 links: {}
+	 connections: {}
+	 userInputMap: {}
+}}

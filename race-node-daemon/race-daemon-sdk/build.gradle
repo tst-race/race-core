@@ -1,0 +1,10 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    api 'redis.clients:jedis:3.7.1'
+    api 'org.apache.commons:commons-compress:1.21'
+    api 'org.json:json:20210307'
+    testImplementation 'junit:junit:4.+'
+}

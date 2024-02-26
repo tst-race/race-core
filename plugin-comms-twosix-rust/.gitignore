@@ -1,0 +1,6 @@
+cmake
+build/
+target/
+*.so
+.vscode
+.temp_build_script_dir

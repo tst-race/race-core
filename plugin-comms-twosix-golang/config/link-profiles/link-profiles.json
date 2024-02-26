@@ -1,0 +1,130 @@
+{
+    "links": [
+        {
+            "utilizedBy": [
+                "1002",
+                "1",
+                "2"
+            ],
+            "connectedTo": [
+                "1001"
+            ],
+            "profile": "{\"hostname\":\"race-sever-1\",\"port\":2001,\"socketType\":\"send\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1001"
+            ],
+            "connectedTo": [
+                "1002",
+                "1",
+                "2"
+            ],
+            "profile": "{\"port\":2001,\"socketType\":\"receive\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1001",
+                "1",
+                "2"
+            ],
+            "connectedTo": [
+                "1002"
+            ],
+            "profile": "{\"hostname\": \"race-sever-2\",\"port\": 2002,\"socketType\": \"send\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1002"
+            ],
+            "connectedTo": [
+                "1001",
+                "1",
+                "2"
+            ],
+            "profile": "{\"port\": 2002,\"socketType\": \"receive\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1001"
+            ],
+            "connectedTo": [
+                "1",
+                "2"
+            ],
+            "profile": "{\"hostname\": \"race-client-1\",\"port\": 2003,\"socketType\": \"send\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1",
+                "2"
+            ],
+            "connectedTo": [
+                "1001"
+            ],
+            "profile": "{\"port\": 2003,\"socketType\": \"receive\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1",
+                "2"
+            ],
+            "connectedTo": [
+                "1002"
+            ],
+            "profile": "{\"hostname\": \"race-client-2\",\"port\": 2004,\"socketType\": \"send\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "1002"
+            ],
+            "connectedTo": [
+                "1",
+                "2"
+            ],
+            "profile": "{\"port\": 2004,\"socketType\": \"receive\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        },
+        {
+            "utilizedBy": [
+                "2000",
+                "2001",
+                "2002",
+                "2003"
+            ],
+            "connectedTo": [
+                "2000",
+                "2001",
+                "2002",
+                "2003"
+            ],
+            "profile": "{\"hostname\": \"www.twitter.com\",\"hashtag\": \"#cheeseMoon\",\"username\": \"cheese\",\"password\": \"password\"}",
+            "properties": {
+                "type": "bidirectional"
+            }
+        }
+    ]
+}

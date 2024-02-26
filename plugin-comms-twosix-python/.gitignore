@@ -1,0 +1,7 @@
+.DS_Store
+._*
+__pycache__
+_commsPluginBindings.so
+commsPluginBindings.py
+.vscode
+venv/

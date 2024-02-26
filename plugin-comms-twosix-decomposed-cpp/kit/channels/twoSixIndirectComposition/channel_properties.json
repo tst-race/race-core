@@ -1,0 +1,55 @@
+{
+    "bootstrap": false,
+    "channelGid": "twoSixIndirectComposition",
+    "connectionType": "CT_INDIRECT",
+    "creatorExpected": {
+      "send": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": 0.1
+      },
+      "receive": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": 0.1
+      }
+    },
+    "description": "Implementation of the Two Six Labs Indirect communications utilizing the Two Six Whiteboard",
+    "duration_s": -1,
+    "linkDirection": "LD_BIDI",
+    "loaderExpected": {
+      "send": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": 0.1
+      },
+      "receive": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": 0.1
+      }
+    },
+    "mtu": -1,
+    "multiAddressable": false,
+    "period_s": -1,
+    "reliable": false,
+    "isFlushable": false,
+    "sendType": "ST_STORED_ASYNC",
+    "supported_hints": ["polling_interval_ms", "after"],
+    "transmissionType": "TT_MULTICAST",
+    "maxLinks": 1000,
+    "creatorsPerLoader": -1,
+    "loadersPerCreator": -1,
+    "roles": [
+      {
+        "roleName": "default",
+        "mechanicalTags": [],
+        "behavioralTags": [],
+        "linkSide": "LS_BOTH"
+      }
+    ],
+    "maxSendsPerInterval": -1,
+    "secondsPerInterval": -1,
+    "intervalEndTime": 0,
+    "sendsRemainingInInterval": -1
+}
