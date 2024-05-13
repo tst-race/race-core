@@ -30,11 +30,11 @@
 #include "../filesystem.h"
 #include "../utils/log.h"
 
-#ifdef __ANDROID__
-#include <JavaShimUtils.h>
+// #ifdef __ANDROID__
+// #include <JavaShimUtils.h>
 
-#include <mutex>
-#endif
+// #include <mutex>
+// #endif
 
 using namespace web::http;
 
@@ -44,10 +44,10 @@ const std::string listener_url = "http://0.0.0.0:2626";
 // this needs to be done before the listener member variable is inited, so it can't be done inside
 // the constructor
 void initialize_cpprest() {
-#ifdef __ANDROID__
-    static std::once_flag cpprest_init_flag;
-    std::call_once(cpprest_init_flag, []() { cpprest_init(JavaShimUtils::getJvm()); });
-#endif
+// #ifdef __ANDROID__
+//     static std::once_flag cpprest_init_flag;
+//     std::call_once(cpprest_init_flag, []() { cpprest_init(JavaShimUtils::getJvm()); });
+// #endif
 }
 
 static std::string exec(const std::string &cmd) {
