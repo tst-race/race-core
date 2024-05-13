@@ -75,11 +75,11 @@ if(ANDROID)
     find_library(LIB_CPPREST cpprest)
     find_library(LIB_LOG log)
 
-    if(TARGET raceSdkCommon)
-      set(RACE_JAVA_SHIMS RaceJavaShims)
-    else()
-      find_library(RACE_JAVA_SHIMS RaceJavaShims)
-    endif()
+    # if(TARGET raceSdkCommon)
+    #   set(RACE_JAVA_SHIMS RaceJavaShims)
+    # else()
+    #   find_library(RACE_JAVA_SHIMS RaceJavaShims)
+    # endif()
 
     if(TARGET raceSdkCommon)
         # If this is a global build, use the targets directly so that cmake can do its dependency magic
