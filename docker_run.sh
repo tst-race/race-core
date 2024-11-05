@@ -260,6 +260,10 @@ if [ "$(uname)" = "Linux" ] ; then
 fi
 # Else OS is Mac, and we always run as root on mac (no user flags needed)
 
+FULL_IMAGE="ghcr.io/tst-race/raceboat/raceboat-compile:latest"
+FULL_IMAGE="raceboat-compile:latest"
+# FULL_IMAGE="ghcr.io/tst-race/race-images/race-compile:main"
+
 echo "Using image ${FULL_IMAGE}"
 
 docker inspect -f '{{ .Created }}' "${FULL_IMAGE}"

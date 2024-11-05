@@ -53,6 +53,7 @@ if(ANDROID)
     )
 
     if ("${TARGET_ARCHITECTURE}" STREQUAL "ANDROID_x86_64")
+        list(APPEND CGO_CXXFLAGS "-I/android/x86_64/include/race/common")
         list(APPEND CGO_CXXFLAGS "-I/android/x86_64/include")
         list(APPEND CGO_LDFLAGS "-L/android/x86_64/lib")
         list(APPEND GOENV
@@ -60,6 +61,7 @@ if(ANDROID)
             GOARCH=amd64
         )
     else()
+        list(APPEND CGO_CXXFLAGS "-I/android/arm64-v8a/include/race/common")
         list(APPEND CGO_CXXFLAGS "-I/android/arm64-v8a/include")
         list(APPEND CGO_LDFLAGS "-L/android/arm64-v8a/lib")
         list(APPEND GOENV
@@ -98,6 +100,8 @@ else()
 endif()
 
 message("GREG TESTTTT ${COMMS_PLUGIN_BINDINGS_GOLANG_GOPATH}")
+message("GREG TESTTTT CGO_LDFLAGS=  ${CGO_LDFLAGS}")
+
 
 # Set common CXX/LD flags
 list(APPEND CGO_CXXFLAGS

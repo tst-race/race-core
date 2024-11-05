@@ -69,3 +69,4 @@ test-default-configs/file_key
 # Build outputs
 ##############################
 kits/
+*.tar.gz
