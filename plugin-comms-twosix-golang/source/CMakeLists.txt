@@ -69,25 +69,26 @@ if(ANDROID)
     endif()
 
 else()
-    if ("${TARGET_ARCHITECTURE}" STREQUAL "LINUX_x86_64")
+    # if ("${TARGET_ARCHITECTURE}" STREQUAL "LINUX_x86_64")
         list(APPEND GOENV
             "CC=clang -target x86_64-linux-gnu"
             "CXX=clang++ -target x86_64-linux-gnu"
         )
         list(APPEND GOCMD -ldflags "-linkmode=external '-extldflags=-target x86_64-linux-gnu'")
+        list(APPEND CGO_CXXFLAGS "-I/linux/x86_64/include/race/common")
         list(APPEND CGO_CXXFLAGS "-I/linux/x86_64/include")
         list(APPEND CGO_LDFLAGS "-L/linux/x86_64/lib")
         list(APPEND GOENV GOARCH=amd64)
-    else()
-        list(APPEND GOENV
-            "CC=clang -target aarch64-linux-gnu"
-            "CXX=clang++ -target aarch64-linux-gnu"
-        )
-        list(APPEND GOCMD -ldflags "-linkmode=external '-extldflags=-target aarch64-linux-gnu'")
-        list(APPEND CGO_CXXFLAGS "-I/linux/arm64-v8a/include")
-        list(APPEND CGO_LDFLAGS "-L/linux/arm64-v8a/lib")
-        list(APPEND GOENV GOARCH=arm64)
-    endif()
+    # else()
+    #     list(APPEND GOENV
+    #         "CC=clang -target aarch64-linux-gnu"
+    #         "CXX=clang++ -target aarch64-linux-gnu"
+    #     )
+    #     list(APPEND GOCMD -ldflags "-linkmode=external '-extldflags=-target aarch64-linux-gnu'")
+    #     list(APPEND CGO_CXXFLAGS "-I/linux/arm64-v8a/include")
+    #     list(APPEND CGO_LDFLAGS "-L/linux/arm64-v8a/lib")
+    #     list(APPEND GOENV GOARCH=arm64)
+    # endif()
 
     list(APPEND GOENV
         GOPATH=/usr/local/go:${COMMS_PLUGIN_BINDINGS_GOLANG_GOPATH}
@@ -95,6 +96,8 @@ else()
         CGO_ENABLED=1
     )
 endif()
+
+message("GREG TESTTTT ${COMMS_PLUGIN_BINDINGS_GOLANG_GOPATH}")
 
 # Set common CXX/LD flags
 list(APPEND CGO_CXXFLAGS
@@ -213,24 +216,24 @@ else()
     )
 endif()
 
-setup_clang_format_for_files(
-    NAME PluginCommsTwoSixGolangLoader
-    FILES loader.cpp
-    PARENT plugin_comms_twosix_golang
-)
+# setup_clang_format_for_files(
+#     NAME PluginCommsTwoSixGolangLoader
+#     FILES loader.cpp
+#     PARENT plugin_comms_twosix_golang
+# )
 
 add_custom_target(format_PluginCommsTwoSixGolang
     COMMAND gofmt -w ${CMAKE_CURRENT_SOURCE_DIR}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMENT "Formatting PluginCommsTwoSixGolang files..."
 )
-add_dependencies(format format_PluginCommsTwoSixGolang)
-add_dependencies(format_plugin_comms_twosix_golang format_PluginCommsTwoSixGolang)
+# add_dependencies(format format_PluginCommsTwoSixGolang)
+# add_dependencies(format_plugin_comms_twosix_golang format_PluginCommsTwoSixGolang)
 
-add_custom_target(check_format_PluginCommsTwoSixGolang
-    COMMAND test -z `gofmt -l ${CMAKE_CURRENT_SOURCE_DIR}`
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMENT "Checking format for PluginCommsTwoSixGolang files..."
-)
-add_dependencies(check_format check_format_PluginCommsTwoSixGolang)
-add_dependencies(check_format_plugin_comms_twosix_golang check_format_PluginCommsTwoSixGolang)
+# add_custom_target(check_format_PluginCommsTwoSixGolang
+#     COMMAND test -z `gofmt -l ${CMAKE_CURRENT_SOURCE_DIR}`
+#     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#     COMMENT "Checking format for PluginCommsTwoSixGolang files..."
+# )
+# add_dependencies(check_format check_format_PluginCommsTwoSixGolang)
+# add_dependencies(check_format_plugin_comms_twosix_golang check_format_PluginCommsTwoSixGolang)
