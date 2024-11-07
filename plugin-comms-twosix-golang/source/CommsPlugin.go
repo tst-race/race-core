@@ -199,10 +199,12 @@ func (connection *commsConnUnicast) Receive(plugin *overwrittenMethodsOnCommsPlu
 	connection.Sock = l
 	buffer := make([]byte, 1024)
 
-	logDebug("connectionMonitor: Listening on ", connection.Host, ":", connection.Port)
+	logDebug("GREG TEST connectionMonitor: Listening on ", connection.Host, ":", connection.Port)
 
 	for true {
+		logDebug("waiting to Accept...")
 		conn, err := l.Accept()
+		logDebug("Accept returned")
 		if err != nil {
 			if strings.HasSuffix(err.Error(), ": use of closed network connection") {
 				// If the socket is closed, it is likely because the connection was closed from outside the goroutine, so we don't have a fit. Break the accept loop.

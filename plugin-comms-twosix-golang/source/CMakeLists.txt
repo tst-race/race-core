@@ -46,13 +46,14 @@ if(ANDROID)
     set(ANDROID_PLATFORM 29)
     # Setup common GOENV variables
     list(APPEND GOENV
+        GOPATH=/android/x86_64/go
         CC=${ANDROID_TOOLCHAIN_ROOT}/bin/${CMAKE_LIBRARY_ARCHITECTURE}${ANDROID_PLATFORM}-clang
         CXX=${ANDROID_TOOLCHAIN_ROOT}/bin/${CMAKE_LIBRARY_ARCHITECTURE}${ANDROID_PLATFORM}-clang++
         GOOS=android
         CGO_ENABLED=1
     )
 
-    if ("${TARGET_ARCHITECTURE}" STREQUAL "ANDROID_x86_64")
+    # if ("${TARGET_ARCHITECTURE}" STREQUAL "ANDROID_x86_64")
         list(APPEND CGO_CXXFLAGS "-I/android/x86_64/include/race/common")
         list(APPEND CGO_CXXFLAGS "-I/android/x86_64/include")
         list(APPEND CGO_LDFLAGS "-L/android/x86_64/lib")
@@ -60,15 +61,15 @@ if(ANDROID)
             GOPATH=/android/x86_64/go:${COMMS_PLUGIN_BINDINGS_GOLANG_GOPATH}
             GOARCH=amd64
         )
-    else()
-        list(APPEND CGO_CXXFLAGS "-I/android/arm64-v8a/include/race/common")
-        list(APPEND CGO_CXXFLAGS "-I/android/arm64-v8a/include")
-        list(APPEND CGO_LDFLAGS "-L/android/arm64-v8a/lib")
-        list(APPEND GOENV
-            GOPATH=/android/arm64-v8a/go:${COMMS_PLUGIN_BINDINGS_GOLANG_GOPATH}
-            GOARCH=arm64
-        )
-    endif()
+    # else()
+    #     list(APPEND CGO_CXXFLAGS "-I/android/arm64-v8a/include/race/common")
+    #     list(APPEND CGO_CXXFLAGS "-I/android/arm64-v8a/include")
+    #     list(APPEND CGO_LDFLAGS "-L/android/arm64-v8a/lib")
+    #     list(APPEND GOENV
+    #         GOPATH=/android/arm64-v8a/go:${COMMS_PLUGIN_BINDINGS_GOLANG_GOPATH}
+    #         GOARCH=arm64
+    #     )
+    # endif()
 
 else()
     # if ("${TARGET_ARCHITECTURE}" STREQUAL "LINUX_x86_64")
